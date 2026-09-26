@@ -94,9 +94,9 @@
      "poster": "assets/viewer/obj10_gt_poster.webp"
     },
     {
-     "name": "Pixal3D",
+     "name": "ReconViaGen",
      "glb": "assets/viewer/obj10_baseline.glb",
-     "size_mb": 0.77,
+     "size_mb": 0.11,
      "poster": "assets/viewer/obj10_baseline_poster.webp"
     }
    ]
