@@ -90,6 +90,68 @@
     "Cupid (our multi-view adaptation)"
    ],
    "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Cupid (our multi-view adaptation)."
+  },
+  {
+   "id": "g20",
+   "tags": [
+    "Park",
+    "Ground"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g20_input.webp",
+    "GT": "assets/gallery/g20_gt.webp",
+    "ReconViaGen": "assets/gallery/g20_rvg.webp",
+    "Amodal3R": "assets/gallery/g20_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g20_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g20_cupid.webp",
+    "Ours": "assets/gallery/g20_ours.webp"
+   },
+   "failure_of": [
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Cupid (our multi-view adaptation)."
+  },
+  {
+   "id": "g21",
+   "tags": [
+    "Park",
+    "Ground"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g21_input.webp",
+    "GT": "assets/gallery/g21_gt.webp",
+    "ReconViaGen": "assets/gallery/g21_rvg.webp",
+    "Amodal3R": "assets/gallery/g21_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g21_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g21_cupid.webp",
+    "Ours": "assets/gallery/g21_ours.webp"
+   },
+   "failure_of": [
+    "Hunyuan3D-2mv",
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Hunyuan3D-2mv, Cupid (our multi-view adaptation)."
+  },
+  {
+   "id": "g22",
+   "tags": [
+    "Factory",
+    "Robot Table"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g22_input.webp",
+    "GT": "assets/gallery/g22_gt.webp",
+    "ReconViaGen": "assets/gallery/g22_rvg.webp",
+    "Amodal3R": "assets/gallery/g22_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g22_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g22_cupid.webp",
+    "Ours": "assets/gallery/g22_ours.webp"
+   },
+   "failure_of": [
+    "Hunyuan3D-2mv",
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Hunyuan3D-2mv, Cupid (our multi-view adaptation)."
   }
  ],
  "notes": [

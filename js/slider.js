@@ -304,6 +304,26 @@ export function createProofApp(root, proof) {
 }
 
 /* ------------------------------------------------------------------ hero card */
+/* The hero card is a rotatable 3D mesh: the poster (a render) is shown at once, the self-hosted
+   model-viewer and the GLB load when the browser is idle, and the input view stays as a small inset. */
+function heroLoadClassic(src) {
+  return new Promise((res, rej) => { const s = document.createElement('script'); s.src = src; s.onload = res; s.onerror = () => rej(new Error('load ' + src)); document.head.appendChild(s); });
+}
+let heroLib = null;
+function heroLoadLib() {
+  if (customElements.get('model-viewer')) return Promise.resolve();
+  if (!heroLib) {
+    heroLib = (async () => {
+      await heroLoadClassic('vendor/mv-config.js').catch(() => {});
+      await import(new URL('vendor/model-viewer/model-viewer.min.js', document.baseURI).href);
+      await customElements.whenDefined('model-viewer');
+    })().catch((e) => { heroLib = null; throw e; });
+  }
+  return heroLib;
+}
+function heroHasWebGL() {
+  try { const c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); } catch (e) { return false; }
+}
 export function createHeroCard(wrap, proof) {
   if (!wrap) return null;
   const body = wrap.querySelector('[data-hero-card-body]');
@@ -312,19 +332,37 @@ export function createHeroCard(wrap, proof) {
   const pairs = all.filter((p) => !p.drift && p.kind !== 'drift');
   const pair = pairs.find((p) => p.hero) || pairs[0] || all[0];
   if (!pair) { wrap.hidden = true; return null; }
-  if (!proof.hero_ok) {
-    if (prov) prov.textContent = 'Input view and FORGE3D render from the same calibrated camera.';
-    return null; // keep the static input/ours pair
-  }
-  const host = h('div', { class: 'cmp-holder is-solo' });
-  body.replaceChildren(host);
-  const s = new CompareSlider(host, { mini: true });
-  s.setPair(pair, 'ours');
-  const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => {
-    if (es.some((e) => e.isIntersecting)) { s.nudgeOnce(34, 2600); io.disconnect(); }
-  }, { threshold: 0.6 }) : null;
-  if (io) io.observe(host); else s.nudgeOnce(34, 2600);
-  return s;
+  const stage = h('div', { class: 'hero-3d' },
+    h('img', { class: 'h3d-poster', src: pair.ours, width: pair.w || 1200, height: pair.h || 1200, alt: 'FORGE3D reconstruction of the object in the input view', decoding: 'async' }),
+    h('figure', { class: 'h3d-inset' },
+      h('img', { src: pair.photo, alt: 'Input view', width: 240, height: 240, decoding: 'async' }),
+      h('figcaption', { text: 'Input view' })));
+  body.replaceChildren(stage);
+  if (prov) prov.textContent = 'Drag to rotate the FORGE3D mesh.';
+  if (!heroHasWebGL()) return null;
+
+  const start = async () => {
+    try {
+      if (!pair.hero_glb) return;
+      await heroLoadLib();
+      const mv = document.createElement('model-viewer');
+      mv.setAttribute('camera-controls', ''); mv.setAttribute('touch-action', 'pan-y');
+      mv.setAttribute('shadow-intensity', '0'); mv.setAttribute('interaction-prompt', 'none');
+      mv.setAttribute('camera-orbit', '20deg 74deg 112%'); mv.setAttribute('tone-mapping', 'neutral');
+      mv.setAttribute('exposure', '1'); mv.setAttribute('min-camera-orbit', 'auto auto 40%'); mv.setAttribute('loading', 'eager');
+      mv.setAttribute('aria-label', 'Rotatable 3D mesh of the FORGE3D reconstruction');
+      const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduce) { mv.setAttribute('auto-rotate', ''); mv.setAttribute('auto-rotate-delay', '0'); mv.setAttribute('rotation-per-second', '24deg'); }
+      // the wheel zooms only with Ctrl/Cmd, so the page keeps scrolling over the card
+      mv.addEventListener('wheel', (e) => { if (!(e.ctrlKey || e.metaKey)) e.stopImmediatePropagation(); }, { capture: true, passive: true });
+      mv.addEventListener('load', () => { try { mv.jumpCameraToGoal(); } catch (e) { /* ignore */ } stage.classList.add('is-live'); });
+      mv.alt = 'Rotatable 3D mesh';
+      mv.src = pair.hero_glb;
+      stage.prepend(mv);
+    } catch (e) { /* keep the static poster */ }
+  };
+  if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 2500 }); else setTimeout(start, 800);
+  return null;
 }
 
 /* ------------------------------------------------------------------ drift row */

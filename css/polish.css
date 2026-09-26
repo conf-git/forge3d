@@ -125,3 +125,13 @@
 
 /* four qualitative rows: the filter chips and the row counter add nothing */
 .f2-gallery [data-filters],.f2-gallery [data-gl-count]{display:none}
+
+/* hero: rotatable 3D card (poster first, model-viewer on top once loaded) */
+.hero-3d{position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;background:var(--surface,#0E1218);border-radius:inherit}
+.hero-3d .h3d-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .4s}
+.hero-3d model-viewer{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .4s;--poster-color:transparent;background:transparent;--progress-bar-color:transparent;cursor:grab}
+.hero-3d.is-live model-viewer{opacity:1}
+.hero-3d.is-live .h3d-poster{opacity:0}
+.hero-3d .h3d-inset{position:absolute;left:12px;bottom:12px;width:26%;margin:0;border:1px solid var(--hairline,#232B36);border-radius:10px;overflow:hidden;background:var(--bg,#07090C);z-index:2;pointer-events:none}
+.hero-3d .h3d-inset img{display:block;width:100%;height:auto}
+.hero-3d .h3d-inset figcaption{font:500 10px/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--text,#EDF1F4);background:rgba(7,9,12,.78);padding:3px 6px}
