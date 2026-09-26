@@ -135,3 +135,11 @@
 .hero-3d .h3d-inset{position:absolute;left:12px;bottom:12px;width:26%;margin:0;border:1px solid var(--hairline,#232B36);border-radius:10px;overflow:hidden;background:var(--bg,#07090C);z-index:2;pointer-events:none}
 .hero-3d .h3d-inset img{display:block;width:100%;height:auto}
 .hero-3d .h3d-inset figcaption{font:500 10px/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--text,#EDF1F4);background:rgba(7,9,12,.78);padding:3px 6px}
+
+/* hero: Compare / Rotate 3D toggle */
+.hero-card-body{position:relative}
+.h-toggle{position:absolute;right:12px;top:12px;z-index:4;display:flex;gap:2px;padding:3px;border:1px solid var(--hairline,#232B36);border-radius:999px;background:rgba(7,9,12,.72);backdrop-filter:blur(6px)}
+.h-tg{appearance:none;border:0;background:transparent;color:var(--muted,#9AA5B1);font:500 11px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;padding:7px 11px;border-radius:999px;cursor:pointer}
+.h-tg.is-on{background:var(--ember,#FF6B4A);color:#07090C}
+.h-tg:focus-visible{outline:2px solid var(--amber,#F5B84B);outline-offset:2px}
+.hero-card-body [hidden]{display:none!important}

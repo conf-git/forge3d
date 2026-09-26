@@ -1,27 +1,27 @@
 {
  "objects": [
   {
-   "id": "obj07",
-   "label": "blue glass swan (figurine)",
-   "thumb": "assets/viewer/obj07_thumb.webp",
+   "id": "obj11",
+   "label": "white swan (figurine)",
+   "thumb": "assets/viewer/obj11_thumb.webp",
    "variants": [
     {
      "name": "Ours",
-     "glb": "assets/viewer/obj07_ours.glb",
-     "size_mb": 1.03,
-     "poster": "assets/viewer/obj07_ours_poster.webp"
+     "glb": "assets/viewer/obj11_ours.glb",
+     "size_mb": 1.08,
+     "poster": "assets/viewer/obj11_ours_poster.webp"
     },
     {
      "name": "Ground truth",
-     "glb": "assets/viewer/obj07_gt.glb",
-     "size_mb": 0.17,
-     "poster": "assets/viewer/obj07_gt_poster.webp"
+     "glb": "assets/viewer/obj11_gt.glb",
+     "size_mb": 0.15,
+     "poster": "assets/viewer/obj11_gt_poster.webp"
     },
     {
-     "name": "ReconViaGen",
-     "glb": "assets/viewer/obj07_baseline.glb",
-     "size_mb": 0.12,
-     "poster": "assets/viewer/obj07_baseline_poster.webp"
+     "name": "Amodal3R",
+     "glb": "assets/viewer/obj11_baseline.glb",
+     "size_mb": 0.23,
+     "poster": "assets/viewer/obj11_baseline_poster.webp"
     }
    ],
    "autorotate": true

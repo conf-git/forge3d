@@ -332,18 +332,31 @@ export function createHeroCard(wrap, proof) {
   const pairs = all.filter((p) => !p.drift && p.kind !== 'drift');
   const pair = pairs.find((p) => p.hero) || pairs[0] || all[0];
   if (!pair) { wrap.hidden = true; return null; }
-  const stage = h('div', { class: 'hero-3d' },
+  const provCompare = prov ? prov.textContent : '';
+  if (!proof.hero_ok) {
+    if (prov) prov.textContent = 'Input view and FORGE3D render from the same calibrated camera.';
+    return null; // keep the static input/ours pair
+  }
+  // default: the side-by-side slider (input view | FORGE3D render, same camera)
+  const host = h('div', { class: 'cmp-holder is-solo' });
+  const s = new CompareSlider(host, { mini: true });
+  s.setPair(pair, 'ours');
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => {
+    if (es.some((e) => e.isIntersecting)) { s.nudgeOnce(34, 2600); io.disconnect(); }
+  }, { threshold: 0.6 }) : null;
+  if (io) io.observe(host); else s.nudgeOnce(34, 2600);
+
+  // option: the same object as a rotatable 3D mesh (poster first, viewer loaded on demand)
+  const stage = h('div', { class: 'hero-3d', hidden: true },
     h('img', { class: 'h3d-poster', src: pair.ours, width: pair.w || 1200, height: pair.h || 1200, alt: 'FORGE3D reconstruction of the object in the input view', decoding: 'async' }),
     h('figure', { class: 'h3d-inset' },
       h('img', { src: pair.photo, alt: 'Input view', width: 240, height: 240, decoding: 'async' }),
       h('figcaption', { text: 'Input view' })));
-  body.replaceChildren(stage);
-  if (prov) prov.textContent = 'Drag to rotate the FORGE3D mesh.';
-  if (!heroHasWebGL()) return null;
-
-  const start = async () => {
+  let mvStarted = false;
+  const start3d = async () => {
+    if (mvStarted || !pair.hero_glb || !heroHasWebGL()) return;
+    mvStarted = true;
     try {
-      if (!pair.hero_glb) return;
       await heroLoadLib();
       const mv = document.createElement('model-viewer');
       mv.setAttribute('camera-controls', ''); mv.setAttribute('touch-action', 'pan-y');
@@ -359,10 +372,22 @@ export function createHeroCard(wrap, proof) {
       mv.alt = 'Rotatable 3D mesh';
       mv.src = pair.hero_glb;
       stage.prepend(mv);
-    } catch (e) { /* keep the static poster */ }
+    } catch (e) { mvStarted = false; /* keep the static poster */ }
   };
-  if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 2500 }); else setTimeout(start, 800);
-  return null;
+  const bCmp = h('button', { type: 'button', class: 'h-tg is-on', 'aria-pressed': 'true', text: 'Compare' });
+  const bRot = h('button', { type: 'button', class: 'h-tg', 'aria-pressed': 'false', text: 'Rotate 3D' });
+  const bar = h('div', { class: 'h-toggle', role: 'group', 'aria-label': 'Hero view' }, bCmp, bRot);
+  const mode = (rot) => {
+    host.hidden = rot; stage.hidden = !rot;
+    bCmp.classList.toggle('is-on', !rot); bRot.classList.toggle('is-on', rot);
+    bCmp.setAttribute('aria-pressed', String(!rot)); bRot.setAttribute('aria-pressed', String(rot));
+    if (prov) prov.textContent = rot ? 'Drag to rotate the FORGE3D mesh.' : provCompare;
+    if (rot) start3d();
+  };
+  bCmp.addEventListener('click', () => mode(false));
+  bRot.addEventListener('click', () => mode(true));
+  body.replaceChildren(host, stage, bar);
+  return s;
 }
 
 /* ------------------------------------------------------------------ drift row */
