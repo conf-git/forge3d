@@ -122,3 +122,6 @@
 .gl-fig4 figcaption{margin-top:12px;max-width:100ch}
 .pf-notes{margin:var(--s6,32px) 0 0;padding-left:18px;color:var(--muted);font:400 13px/1.6 var(--font-body);max-width:90ch}
 .pf-notes li+li{margin-top:6px}
+
+/* four qualitative rows: the filter chips and the row counter add nothing */
+.f2-gallery [data-filters],.f2-gallery [data-gl-count]{display:none}

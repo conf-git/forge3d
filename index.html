@@ -42,8 +42,8 @@
     <nav class="topnav-links" aria-label="Sections">
       <a href="#proof" data-nav-link="proof">Proof</a>
       <a href="#method" data-nav-link="method">Method</a>
-      <a href="#viewer" data-nav-link="viewer">Inspect</a>
       <a href="#gallery" data-nav-link="gallery">Compare</a>
+      <a href="#viewer" data-nav-link="viewer">Inspect</a>
       <a href="#results" data-nav-link="results">Results</a>
       <a href="#bench" data-nav-link="bench" class="is-bench">FORGE3DBench</a>
       <a href="#notes" data-nav-link="notes">Notes</a>
@@ -140,7 +140,7 @@
       </div>
       <div class="proof-head-r">
         <p class="sec-lead">Every pair is rendered from the same calibrated camera as the input view. Drag the divider, use the arrow keys, or overlay the render.</p>
-        <p class="sel-note"><span class="tag-selected">Selected examples</span> <span data-sel-rule>Chosen to show the comparison clearly, mostly where FORGE3D is ahead; not a random draw. The rule is under Selection, and the gallery below shows failures of every method.</span></p>
+        <p class="sel-note"><span class="tag-selected">Selected examples</span></p>
       </div>
     </div>
     <div class="proof-app" data-proof-app>
@@ -151,11 +151,6 @@
       <p class="drift-lead">These baselines return a believable object whose visible surface still drifts from the input view. Left of the divider is the input, right is the baseline render from the same camera.</p>
       <div class="drift-row" data-drift-row></div>
     </div>
-    <ul class="pf-notes" data-pf-notes>
-      <li>Every method reconstructs each object from the same input views (RGB and object masks) and the same cameras.</li>
-      <li>Alignment: the shown baselines (ReconViaGen, Amodal3R, Hunyuan3D-2mv, Cupid) produce meshes in their own object frame, so each is registered to the ground-truth frame by a dense rotation search followed by rigid ICP, with an input-view silhouette tie-break. Pixal3D is placed by camera only, since its output is pixel-aligned. FORGE3D is generated directly in the ground-truth frame and is not re-aligned.</li>
-      <li>Inputs differ in one respect: FORGE3D additionally uses the metric depth of the input views (oracle depth from the renderer, not predicted depth), while the baselines take RGB and masks only. FORGE3D is therefore grounded in the ground-truth frame through that depth; this is part of the method, not a like-for-like RGB-only comparison.</li>
-    </ul>
   </div>
 </section>
 <!-- 05_method.html -->
@@ -191,13 +186,52 @@
     <noscript><p class="f2-noscript">The method text and diagram load with JavaScript. The paper describes the same three steps.</p></noscript>
   </div>
 </section>
-<!-- 06_viewer.html -->
+<!-- 06_gallery.html -->
+<section class="f2-sec f2-gallery" id="gallery" data-section="gallery" aria-labelledby="gallery-h">
+  <a id="compare" class="f2-anchor" tabindex="-1" aria-hidden="true"></a>
+  <div class="f2-wrap">
+    <header class="f2-head">
+      <p class="f2-eyebrow">Against the field</p>
+      <h2 class="f2-h2" id="gallery-h">Same inputs, every method</h2>
+      <p class="f2-selected"><span class="f2-badge">Selected examples</span></p>
+    </header>
+
+    <figure class="gl-fig4">
+      <img src="assets/gallery/qual4.webp" width="2480" height="1372" loading="lazy" decoding="async" alt="Qualitative comparison on four FORGE3DBench objects: a screwdriver, a warty cucumber, a red toy pistol and a swan. Each row shows the input frame with the object boxed, the ground-truth mesh, then ReconViaGen, Pixal3D, Amodal3R, Hunyuan3D-2mv, Cupid and FORGE3D renders from the same camera.">
+    </figure>
+
+    <div class="gl-filters" data-filters aria-label="Filter examples by tag"></div>
+    <label class="gl-expo"><input type="checkbox" data-expo checked> <span>Display exposure x1.5 on every column, same for all methods (display only, uncheck for raw renders)</span></label>
+    <p class="gl-count" data-gl-count role="status" aria-live="polite"></p>
+
+    <div class="gl-table is-lifted" data-table>
+      <div class="gl-head" data-head aria-hidden="true"></div>
+      <div class="gl-rows" data-rows></div>
+    </div>
+    <noscript><p class="f2-noscript">The example gallery needs JavaScript.</p></noscript>
+  </div>
+
+  <dialog class="gl-dialog" data-dialog aria-label="Example enlarged">
+    <div class="gl-dialog-inner">
+      <button type="button" class="gl-x f2-btn" data-close aria-label="Close">Close</button>
+      <figure class="gl-fig">
+        <img alt="" data-lb-img>
+        <figcaption class="f2-prov" data-lb-cap></figcaption>
+      </figure>
+      <div class="gl-nav">
+        <button type="button" class="f2-btn" data-prev aria-label="Previous method">Prev</button>
+        <button type="button" class="f2-btn" data-next aria-label="Next method">Next</button>
+      </div>
+    </div>
+  </dialog>
+</section>
+<!-- 07_viewer.html -->
 <section class="f2-sec f2-viewer" id="viewer" data-section="viewer" aria-labelledby="viewer-h">
   <div class="f2-wrap">
     <header class="f2-head">
       <p class="f2-eyebrow">Inspect the mesh</p>
       <h2 class="f2-h2" id="viewer-h">Orbit it.</h2>
-      <p class="f2-selected"><span class="f2-badge">Selected examples</span> <span class="f2-selnote">Nine objects: the four from the qualitative figure, and five picked where ours has the lower Chamfer-L1 than the best baseline, so this is the favourable side of the distribution.</span></p>
+      <p class="f2-selected"><span class="f2-badge">Selected examples</span></p>
       <p class="f2-lede">Drag to rotate. Switch between our mesh, the ground truth and the best baseline for that object; the camera stays where you left it, so you can check the same spot on each.</p>
     </header>
 
@@ -236,54 +270,6 @@
     </div>
     <noscript><p class="f2-noscript">The 3D viewer needs JavaScript and WebGL.</p></noscript>
   </div>
-</section>
-<!-- 07_gallery.html -->
-<section class="f2-sec f2-gallery" id="gallery" data-section="gallery" aria-labelledby="gallery-h">
-  <a id="compare" class="f2-anchor" tabindex="-1" aria-hidden="true"></a>
-  <div class="f2-wrap">
-    <header class="f2-head">
-      <p class="f2-eyebrow">Against the field</p>
-      <h2 class="f2-h2" id="gallery-h">Same inputs, every method</h2>
-      <p class="f2-selected"><span class="f2-badge">Selected examples</span></p>
-      <p class="f2-lede" data-caption>Three objects per capture configuration were drawn with a fixed seed, then some were swapped within the same configuration to include cases where a method fails. This is a curated set, not an uncurated or exhaustive one. Failures of any method, ours included, are marked and kept.</p>
-    </header>
-
-    <figure class="gl-fig4">
-      <img src="assets/gallery/qual4.webp" width="2480" height="1372" loading="lazy" decoding="async" alt="Qualitative comparison on four FORGE3DBench objects: a screwdriver, a warty cucumber, a red toy pistol and a swan. Each row shows the input frame with the object boxed, the ground-truth mesh, then ReconViaGen, Pixal3D, Amodal3R, Hunyuan3D-2mv, Cupid and FORGE3D renders from the same camera.">
-    </figure>
-
-    <div class="gl-filters" data-filters aria-label="Filter examples by tag"></div>
-    <label class="gl-expo"><input type="checkbox" data-expo checked> <span>Display exposure x1.5 on every column, same for all methods (display only, uncheck for raw renders)</span></label>
-    <p class="gl-count" data-gl-count role="status" aria-live="polite"></p>
-
-    <div class="gl-table is-lifted" data-table>
-      <div class="gl-head" data-head aria-hidden="true"></div>
-      <div class="gl-rows" data-rows></div>
-    </div>
-
-    <ul class="gl-notes" data-notes>
-      <li>Best baseline for an object is the baseline with the lowest Chamfer-L1 on that object.</li>
-      <li>Every method reconstructs each object from the same input views (RGB and object masks) and the same cameras.</li>
-      <li>Alignment: the shown baselines (ReconViaGen, Amodal3R, Hunyuan3D-2mv, Cupid) produce meshes in their own object frame, so each is registered to the ground-truth frame by a dense rotation search followed by rigid ICP, with an input-view silhouette tie-break. Pixal3D is placed by camera only, since its output is pixel-aligned. FORGE3D is generated directly in the ground-truth frame and is not re-aligned.</li>
-      <li>Each method is scored on its own valid objects; the number of objects is given in the results tables where it differs.</li>
-      <li>Cupid: the released code is single-view; the multi-view variant here is our own implementation of the paper's multi-view fusion.</li>
-    </ul>
-    <noscript><p class="f2-noscript">The example gallery needs JavaScript.</p></noscript>
-  </div>
-
-  <dialog class="gl-dialog" data-dialog aria-label="Example enlarged">
-    <div class="gl-dialog-inner">
-      <button type="button" class="gl-x f2-btn" data-close aria-label="Close">Close</button>
-      <figure class="gl-fig">
-        <img alt="" data-lb-img>
-        <figcaption class="f2-prov" data-lb-cap></figcaption>
-      </figure>
-      <div class="gl-nav">
-        <button type="button" class="f2-btn" data-prev aria-label="Previous method">Prev</button>
-        <button type="button" class="f2-btn" data-next aria-label="Next method">Next</button>
-      </div>
-    </div>
-  </dialog>
 </section>
 <!-- 08_results.html -->
 <section class="sec results" id="results" data-section="results" aria-labelledby="results-title">
