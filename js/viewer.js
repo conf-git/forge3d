@@ -53,6 +53,12 @@ export default async function init(root, data) {
   const coarse = matchMedia('(pointer: coarse)').matches || (navigator.connection && navigator.connection.saveData);
   let oi = 0, kind = 'ours', mv = null, wantLive = false, everLoaded = false, pendingKeep = null;
 
+  // objects flagged autorotate switch the auto-rotate checkbox on when selected (never under reduced motion); others keep the user's choice
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const applyObjRotate = () => {
+    if (objects[oi].autorotate && !reduceMotion) rot.checked = true;
+    if (mv) { rot.checked ? mv.setAttribute('auto-rotate', '') : mv.removeAttribute('auto-rotate'); }
+  };
   const slot = (o, k) => o.variants.find((v) => kindOf(v.name) === k);
   const current = () => slot(objects[oi], kind);
 
@@ -143,6 +149,7 @@ export default async function init(root, data) {
   function selectObject(i) {
     if (i === oi) return;
     oi = i;
+    applyObjRotate();
     if (!slot(objects[oi], kind)) kind = 'ours';
     if (!slot(objects[oi], kind)) kind = objects[oi].variants[0] ? kindOf(objects[oi].variants[0].name) : 'ours';
     paintUI();
@@ -164,6 +171,7 @@ export default async function init(root, data) {
     fallback.textContent = 'WebGL is not available in this browser, so the interactive viewer is off. Static previews of each mesh are shown; the buttons still switch between them.';
     fallback.hidden = false;
   }
+  applyObjRotate();
   paintUI();
   if (webgl && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver((es) => {

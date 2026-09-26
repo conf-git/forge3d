@@ -1,6 +1,107 @@
 {
  "objects": [
   {
+   "id": "obj07",
+   "label": "blue glass swan (figurine)",
+   "thumb": "assets/viewer/obj07_thumb.webp",
+   "variants": [
+    {
+     "name": "Ours",
+     "glb": "assets/viewer/obj07_ours.glb",
+     "size_mb": 1.03,
+     "poster": "assets/viewer/obj07_ours_poster.webp"
+    },
+    {
+     "name": "Ground truth",
+     "glb": "assets/viewer/obj07_gt.glb",
+     "size_mb": 0.17,
+     "poster": "assets/viewer/obj07_gt_poster.webp"
+    },
+    {
+     "name": "ReconViaGen",
+     "glb": "assets/viewer/obj07_baseline.glb",
+     "size_mb": 0.12,
+     "poster": "assets/viewer/obj07_baseline_poster.webp"
+    }
+   ],
+   "autorotate": true
+  },
+  {
+   "id": "obj08",
+   "label": "screwdriver with yellow handle",
+   "thumb": "assets/viewer/obj08_thumb.webp",
+   "variants": [
+    {
+     "name": "Ours",
+     "glb": "assets/viewer/obj08_ours.glb",
+     "size_mb": 0.78,
+     "poster": "assets/viewer/obj08_ours_poster.webp"
+    },
+    {
+     "name": "Ground truth",
+     "glb": "assets/viewer/obj08_gt.glb",
+     "size_mb": 0.8,
+     "poster": "assets/viewer/obj08_gt_poster.webp"
+    },
+    {
+     "name": "ReconViaGen",
+     "glb": "assets/viewer/obj08_baseline.glb",
+     "size_mb": 0.14,
+     "poster": "assets/viewer/obj08_baseline_poster.webp"
+    }
+   ]
+  },
+  {
+   "id": "obj09",
+   "label": "warty cucumber",
+   "thumb": "assets/viewer/obj09_thumb.webp",
+   "variants": [
+    {
+     "name": "Ours",
+     "glb": "assets/viewer/obj09_ours.glb",
+     "size_mb": 0.98,
+     "poster": "assets/viewer/obj09_ours_poster.webp"
+    },
+    {
+     "name": "Ground truth",
+     "glb": "assets/viewer/obj09_gt.glb",
+     "size_mb": 0.74,
+     "poster": "assets/viewer/obj09_gt_poster.webp"
+    },
+    {
+     "name": "ReconViaGen",
+     "glb": "assets/viewer/obj09_baseline.glb",
+     "size_mb": 0.11,
+     "poster": "assets/viewer/obj09_baseline_poster.webp"
+    }
+   ]
+  },
+  {
+   "id": "obj10",
+   "label": "red toy pistol",
+   "thumb": "assets/viewer/obj10_thumb.webp",
+   "variants": [
+    {
+     "name": "Ours",
+     "glb": "assets/viewer/obj10_ours.glb",
+     "size_mb": 0.89,
+     "poster": "assets/viewer/obj10_ours_poster.webp"
+    },
+    {
+     "name": "Ground truth",
+     "glb": "assets/viewer/obj10_gt.glb",
+     "size_mb": 0.68,
+     "poster": "assets/viewer/obj10_gt_poster.webp"
+    },
+    {
+     "name": "ReconViaGen",
+     "glb": "assets/viewer/obj10_baseline.glb",
+     "size_mb": 0.11,
+     "poster": "assets/viewer/obj10_baseline_poster.webp"
+    }
+   ]
+  },
+  {
    "id": "obj01",
    "label": "red wafer snack (box, printed colour)",
    "thumb": "assets/viewer/obj01_thumb.webp",
@@ -22,31 +123,6 @@
      "glb": "assets/viewer/obj01_baseline.glb",
      "size_mb": 0.13,
      "poster": "assets/viewer/obj01_baseline_poster.webp"
-    }
-   ]
-  },
-  {
-   "id": "obj02",
-   "label": "blue glass swan (glass)",
-   "thumb": "assets/viewer/obj02_thumb.webp",
-   "variants": [
-    {
-     "name": "Ours",
-     "glb": "assets/viewer/obj02_ours.glb",
-     "size_mb": 1.03,
-     "poster": "assets/viewer/obj02_ours_poster.webp"
-    },
-    {
-     "name": "Ground truth",
-     "glb": "assets/viewer/obj02_gt.glb",
-     "size_mb": 0.17,
-     "poster": "assets/viewer/obj02_gt_poster.webp"
-    },
-    {
-     "name": "ReconViaGen",
-     "glb": "assets/viewer/obj02_baseline.glb",
-     "size_mb": 0.12,
-     "poster": "assets/viewer/obj02_baseline_poster.webp"
     }
    ]
   },

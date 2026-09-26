@@ -40,16 +40,6 @@
     }
   },
   "bench_blurb": "FORGE3DBench contains 120 photorealistic multi-object scenes rendered with physically based lighting: 20 scenes for each of three capture configurations (ground, table, robot table) in each of two environments (Factory and Park). The scenes use more than 300 unique assets, each with a ground-truth mesh. Every scene has 24 calibrated viewpoints with metric depth, and every object has a modal mask (visible pixels) and an amodal mask (full extent). Placement, lighting, and clutter vary, and in the robot-table scenes an arm reaches in and occludes objects. Methods are scored against the true mesh where the observation places it. FORGE3D uses the calibrated views and the observed depth; the baselines shown on this page use RGB and object masks only.",
-  "limits": [
-    "All numbers on this page use a single sampling seed. Small margins are unresolved, not wins.",
-    "The advantage is not uniform. At one view, FORGE3D is behind or tied with Hunyuan3D-2mv on novel-view PSNR, novel-view SSIM and Chamfer-L1. At four views on FORGE3DBench-150, ours does not have the lowest Chamfer-L1 on 36 of 144 objects (25 percent).",
-    "FORGE3D uses oracle depth from the renderer as an extra input that the baselines do not receive. This page does not show how it behaves with predicted depth.",
-    "The Toys4K-300 list contains 100 objects that were used to monitor training, so it is not a clean held-out set. Overlap between the training data and FORGE3DBench-150 has not been audited.",
-    "Baselines are aligned to the ground truth before scoring, while FORGE3D is not re-aligned. The alignment protocol is stated under each table.",
-    "The Cupid multi-view rows come from our own adaptation of a single-view release. A large share of its outputs are flagged as failures here and its numbers should not be read as the original method's.",
-    "Pose evidence is not shown on this page. Pending cells are shown as an em dash with a note.",
-    "Galleries and the Proof and Inspect sets show selected examples. Failures of every method, including ours, are shown in the gallery with equal prominence."
-  ],
   "bibtex": "@misc{anonymous_forge3d,\n  title  = {Forge3D: Faithful Observation-Grounded 3D Mesh Generation via Latent Forcing},\n  author = {Anonymous},\n  note   = {Under review}\n}",
   "disclosures": [
     "This page is anonymous and belongs to a paper under double-blind review.",

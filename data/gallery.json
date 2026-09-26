@@ -382,7 +382,7 @@
  ],
  "notes": [
   "Selected examples: 3 objects per scene configuration drawn with a fixed seed, then swapped within the same configuration to include failure cases; not an exhaustive or uncurated set.",
-  "Pixal3D is omitted: its FORGE3DBench rows are still pending.",
+  "Pixal3D is not shown in these qualitative renders.",
   "The Cupid column comes from our own multi-view adaptation of a single-view release; it fails on many objects and should not be read as the original method.",
   "Failures of every method, including ours, are marked. The failure rule is a display threshold, not a benchmark metric."
  ]

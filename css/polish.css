@@ -115,3 +115,10 @@
 .hero-ctas .btn { padding: 0 14px; font-size: .9rem; }
 .results .swipe-hint { margin-top: var(--s5); }
 @media (max-width: 640px) { .seg { border-radius: 20px; } }
+
+/* qualitative 4-object figure + proof notes (added with the main-table update) */
+.gl-fig4{margin:var(--s6,32px) 0 var(--s6,32px);padding:0}
+.gl-fig4 img{display:block;width:100%;height:auto;border-radius:var(--radius,14px);background:#fff;border:1px solid var(--hairline,#232B36)}
+.gl-fig4 figcaption{margin-top:12px;max-width:100ch}
+.pf-notes{margin:var(--s6,32px) 0 0;padding-left:18px;color:var(--muted);font:400 13px/1.6 var(--font-body);max-width:90ch}
+.pf-notes li+li{margin-top:6px}
