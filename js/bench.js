@@ -20,11 +20,8 @@ const fmt = (n) => Number(n).toLocaleString('en-US');
 // stat definitions: key in bench.stats -> label. Only keys present with a real value are shown.
 const STATS = [
   ['scenes', 'photorealistic scenes', null],
-  ['configs', 'capture configurations', (s) => (s.scenes_per_config != null ? `${fmt(s.scenes_per_config)} scenes per configuration` : null)],
-  ['views_per_scene', 'calibrated views per scene', null],
+  ['scenes_per_config', 'scenes per configuration', null],
   ['assets', 'unique assets with ground-truth meshes', null],
-  ['objects', 'objects', null],
-  ['eval_subset', 'objects in the evaluation subset', null],
 ];
 
 export default async function init(root, data) {

@@ -40,11 +40,10 @@
   <div class="topnav-inner">
     <a class="topnav-brand wm" href="#top" aria-label="FORGE3D, back to top">FORGE<span class="wm-3d">3D</span></a>
     <nav class="topnav-links" aria-label="Sections">
-      <a href="#proof" data-nav-link="proof">Proof</a>
       <a href="#method" data-nav-link="method">Method</a>
+      <a href="#proof" data-nav-link="proof">Proof</a>
       <a href="#gallery" data-nav-link="gallery">Compare</a>
       <a href="#viewer" data-nav-link="viewer">Inspect</a>
-      <a href="#results" data-nav-link="results">Results</a>
       <a href="#bench" data-nav-link="bench" class="is-bench">FORGE3DBench</a>
       <a href="#notes" data-nav-link="notes">Notes</a>
     </nav>
@@ -91,17 +90,6 @@
   </div>
   <a class="scroll-cue" href="#proofstrip" aria-label="Scroll to the facts"><span aria-hidden="true"></span></a>
 </section>
-<!-- 02_proofstrip.html -->
-<section class="proofstrip" id="proofstrip" data-section="proofstrip" aria-label="Frozen facts" >
-  <div class="container">
-    <ul class="stats" data-stats>
-      <li class="stat" data-stat="fb808_lpips"><span class="stat-l">FORGE3DBench, 4 views: LPIPS, ours vs best baseline (lower is better)</span><span class="stat-v" data-count><span class="v-ours">0.0911</span><span class="v-vs">vs</span><span class="v-base">0.1093</span></span><span class="stat-d"></span></li>
-<li class="stat" data-stat="omni100_lpips"><span class="stat-l">OmniObject3D real photos, 4 views: LPIPS, ours vs best baseline (lower is better)</span><span class="stat-v" data-count><span class="v-ours">0.1628</span><span class="v-vs">vs</span><span class="v-base">0.1950</span></span><span class="stat-d"></span></li>
-<li class="stat" data-stat="toys300_lpips"><span class="stat-l">Toys4K, 4 views: LPIPS, ours vs best baseline (lower is better)</span><span class="stat-v" data-count><span class="v-ours">0.0923</span><span class="v-vs">vs</span><span class="v-base">0.1029</span></span><span class="stat-d"></span></li>
-<li class="stat" data-stat="omni100_f01"><span class="stat-l">OmniObject3D real photos, 4 views: F@0.01, ours vs best baseline (higher is better)</span><span class="stat-v" data-count><span class="v-ours">0.723</span><span class="v-vs">vs</span><span class="v-base">0.369</span></span><span class="stat-d"></span></li>
-    </ul>
-  </div>
-</section>
 <!-- 03_tldr.html -->
 <section class="sec tldr" id="tldr" data-section="tldr" aria-labelledby="tldr-title">
   <div class="ray" aria-hidden="true"></div>
@@ -117,10 +105,6 @@
 <li>FORGE3DBench provides cluttered, occluded, multi-view scenes with ground-truth meshes to test observation faithfulness.</li>
         </ul>
       </div>
-      <aside class="abstract-card" aria-labelledby="abs-title">
-        <h3 id="abs-title" class="abs-h">Abstract <span class="soon-chip">draft placeholder</span></h3>
-        <p class="abs-text" id="abs-text" data-abs>Recent 3D mesh generators produce visually compelling assets, yet faithfully reconstructing specific objects from real-world observations remains challenging. A practical mesh generation framework must jointly preserve observed 3D geometry and pixel-aligned appearance from one or more views while plausibly completing unseen regions. However, these observations often serve only as coarse conditioning signals, allowing generated geometry and appearance to deviate from the input. Moreover, existing 3D mesh benchmarks provide limited coverage of realistic scenes and challenging observation conditions needed to assess reconstruction faithfulness in real-world scenarios. To address these gaps, we introduce FORGE3D (Faithful Observation-Grounded 3D Mesh Generation), an observation-faithful mesh generation pipeline, and FORGE3DBench, a benchmark for evaluating observation faithfulness under realistic multi-view conditions. FORGE3D directly encodes geometric and visual observations into the generative latent space through geometry and appearance latent forcing, initializing generation from observed evidence. Applied to a pretrained generator, latent forcing already improves geometric fidelity without additional training, and fine-tuning with correspondence-aware multi-view attention further improves appearance. FORGE3DBench features more than 300 unique assets across 120 simulated scenes (20 in each of six capture configurations) with 24 camera viewpoints, encompassing varied object placements, lighting conditions, and occlusions. On the benchmarks shown on this page, FORGE3D is ahead of the four shown baselines at four views and mixed at one view; FORGE3D also uses observed depth that the baselines do not receive.</p>
-      </aside>
     </div>
     <ul class="chip-cards">
       <li class="chip-card"><span class="chip-num" aria-hidden="true">01</span><h3>Latent forcing</h3><p>Observed geometry and appearance are encoded into the generator&#x27;s latent space and used as the starting point of generation, so unseen regions are the only part left to the prior.</p></li>
@@ -129,31 +113,7 @@
     </ul>
   </div>
 </section>
-<!-- 04_proof.html -->
-<section class="sec proof" id="proof" data-section="proof" aria-labelledby="proof-title">
-  <div class="ray" aria-hidden="true"></div>
-  <div class="container">
-    <div class="proof-head">
-      <div>
-        <p class="eyebrow">Proof</p>
-        <h2 id="proof-title" class="sec-title">Same camera, side by side</h2>
-      </div>
-      <div class="proof-head-r">
-        <p class="sec-lead">Every pair is rendered from the same calibrated camera as the input view. Drag the divider, use the arrow keys, or overlay the render.</p>
-        <p class="sel-note"><span class="tag-selected">Selected examples</span></p>
-      </div>
-    </div>
-    <div class="proof-app" data-proof-app>
-      <noscript><div class="static-pair"><figure><img src="assets/proof/p11_input.webp" width="1200" height="1200" alt="Input view (rendered benchmark frame)" loading="lazy" decoding="async"><figcaption>Input view</figcaption></figure><figure><img src="assets/proof/p11_ours.webp" width="1200" height="1200" alt="FORGE3D render from the same camera" loading="lazy" decoding="async"><figcaption>FORGE3D render</figcaption></figure></div><p class="prov">Interactive comparison needs JavaScript. Static pair shown.</p></noscript>
-    </div>
-    <div class="drift" data-drift hidden>
-      <h3 class="drift-title">Plausible is not faithful</h3>
-      <p class="drift-lead">These baselines return a believable object whose visible surface still drifts from the input view. Left of the divider is the input, right is the baseline render from the same camera.</p>
-      <div class="drift-row" data-drift-row></div>
-    </div>
-  </div>
-</section>
-<!-- 05_method.html -->
+<!-- 03b_method.html -->
 <section class="f2-sec f2-method" id="method" data-section="method" aria-labelledby="method-h">
   <div class="f2-wrap">
     <header class="f2-head">
@@ -184,6 +144,30 @@
       </div>
     </div>
     <noscript><p class="f2-noscript">The method text and diagram load with JavaScript. The paper describes the same three steps.</p></noscript>
+  </div>
+</section>
+<!-- 04_proof.html -->
+<section class="sec proof" id="proof" data-section="proof" aria-labelledby="proof-title">
+  <div class="ray" aria-hidden="true"></div>
+  <div class="container">
+    <div class="proof-head">
+      <div>
+        <p class="eyebrow">Proof</p>
+        <h2 id="proof-title" class="sec-title">Same camera, side by side</h2>
+      </div>
+      <div class="proof-head-r">
+        <p class="sec-lead">Every pair is rendered from the same calibrated camera as the input view. Drag the divider, use the arrow keys, or overlay the render.</p>
+        <p class="sel-note"><span class="tag-selected">Selected examples</span></p>
+      </div>
+    </div>
+    <div class="proof-app" data-proof-app>
+      <noscript><div class="static-pair"><figure><img src="assets/proof/p11_input.webp" width="1200" height="1200" alt="Input view (rendered benchmark frame)" loading="lazy" decoding="async"><figcaption>Input view</figcaption></figure><figure><img src="assets/proof/p11_ours.webp" width="1200" height="1200" alt="FORGE3D render from the same camera" loading="lazy" decoding="async"><figcaption>FORGE3D render</figcaption></figure></div><p class="prov">Interactive comparison needs JavaScript. Static pair shown.</p></noscript>
+    </div>
+    <div class="drift" data-drift hidden>
+      <h3 class="drift-title">Plausible is not faithful</h3>
+      <p class="drift-lead">These baselines return a believable object whose visible surface still drifts from the input view. Left of the divider is the input, right is the baseline render from the same camera.</p>
+      <div class="drift-row" data-drift-row></div>
+    </div>
   </div>
 </section>
 <!-- 06_gallery.html -->
@@ -260,18 +244,6 @@
       </aside>
     </div>
     <noscript><p class="f2-noscript">The 3D viewer needs JavaScript and WebGL.</p></noscript>
-  </div>
-</section>
-<!-- 08_results.html -->
-<section class="sec results" id="results" data-section="results" aria-labelledby="results-title">
-  <div class="ray" aria-hidden="true"></div>
-  <div class="container">
-    <p class="eyebrow">Results</p>
-    <h2 id="results-title" class="sec-title">Results</h2>
-    <p class="swipe-hint" aria-hidden="true">Swipe the table sideways. The method column stays in view.</p>
-    <div class="results-app" data-results-app>
-      <noscript><p class="prov">The results tables are rendered by script from the results file. Enable JavaScript to view them.</p></noscript>
-    </div>
   </div>
 </section>
 <!-- 09_bench.html -->
