@@ -143,3 +143,6 @@
 .h-tg.is-on{background:var(--ember,#FF6B4A);color:#07090C}
 .h-tg:focus-visible{outline:2px solid var(--amber,#F5B84B);outline-offset:2px}
 .hero-card-body [hidden]{display:none!important}
+
+/* side cards removed: one centred column */
+@media (min-width:1040px){.proof-app.is-ready{grid-template-columns:minmax(0,min(78svh,860px));justify-content:center}}

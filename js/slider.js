@@ -253,7 +253,7 @@ export function createProofApp(root, proof) {
     objGroup, h('div', { class: 'proof-controls' }, srcGroup, modeGroup));
   const main = h('div', { class: 'proof-main' }, h('div', { class: 'proof-frame' }, vf, opRow, prov));
 
-  root.replaceChildren(controls, main, side);
+  root.replaceChildren(controls, main);
   root.classList.add('is-ready');
 
   function refresh() {
@@ -264,7 +264,7 @@ export function createProofApp(root, proof) {
     bOurs.disabled = !p.ours;
     const name = source === 'baseline' ? (p.baseline_name || 'Baseline') : source === 'gt' ? 'Ground truth' : 'FORGE3D';
     legendSw.className = 'sw sw-' + source;
-    root.querySelector('.legend-r').textContent = mode === 'overlay'
+    legendR.querySelector('.legend-r').textContent = mode === 'overlay'
       ? `Overlaid on the input view: ${name} render (opacity slider)`
       : `Right of the divider: ${name} render`;
     const rule = (p.best_baseline_rule || 'lowest CD-L1 on this object').replace(/\.+$/, '');

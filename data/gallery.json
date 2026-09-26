@@ -30,7 +30,7 @@
     "Amodal3R",
     "Cupid (our multi-view adaptation)"
    ],
-   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Amodal3R, Cupid (our multi-view adaptation)."
+   "note": ""
   },
   {
    "id": "g02",
@@ -51,7 +51,7 @@
    "failure_of": [
     "Cupid (our multi-view adaptation)"
    ],
-   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Cupid (our multi-view adaptation)."
+   "note": ""
   },
   {
    "id": "g09",
@@ -72,7 +72,7 @@
    "failure_of": [
     "Cupid (our multi-view adaptation)"
    ],
-   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Cupid (our multi-view adaptation)."
+   "note": ""
   },
   {
    "id": "g20",
@@ -93,7 +93,7 @@
    "failure_of": [
     "Cupid (our multi-view adaptation)"
    ],
-   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Cupid (our multi-view adaptation)."
+   "note": ""
   },
   {
    "id": "g21",
@@ -115,7 +115,7 @@
     "Hunyuan3D-2mv",
     "Cupid (our multi-view adaptation)"
    ],
-   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Hunyuan3D-2mv, Cupid (our multi-view adaptation)."
+   "note": ""
   },
   {
    "id": "g22",
@@ -137,7 +137,7 @@
     "Hunyuan3D-2mv",
     "Cupid (our multi-view adaptation)"
    ],
-   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Hunyuan3D-2mv, Cupid (our multi-view adaptation)."
+   "note": ""
   }
  ],
  "notes": [

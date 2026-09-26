@@ -18,9 +18,9 @@
      "poster": "assets/viewer/obj11_gt_poster.webp"
     },
     {
-     "name": "Amodal3R",
+     "name": "Pixal3D",
      "glb": "assets/viewer/obj11_baseline.glb",
-     "size_mb": 0.23,
+     "size_mb": 0.83,
      "poster": "assets/viewer/obj11_baseline_poster.webp"
     }
    ],
@@ -44,9 +44,9 @@
      "poster": "assets/viewer/obj08_gt_poster.webp"
     },
     {
-     "name": "ReconViaGen",
+     "name": "Pixal3D",
      "glb": "assets/viewer/obj08_baseline.glb",
-     "size_mb": 0.14,
+     "size_mb": 0.77,
      "poster": "assets/viewer/obj08_baseline_poster.webp"
     }
    ]
@@ -69,9 +69,9 @@
      "poster": "assets/viewer/obj09_gt_poster.webp"
     },
     {
-     "name": "ReconViaGen",
+     "name": "Pixal3D",
      "glb": "assets/viewer/obj09_baseline.glb",
-     "size_mb": 0.11,
+     "size_mb": 0.81,
      "poster": "assets/viewer/obj09_baseline_poster.webp"
     }
    ]
@@ -94,13 +94,13 @@
      "poster": "assets/viewer/obj10_gt_poster.webp"
     },
     {
-     "name": "ReconViaGen",
+     "name": "Pixal3D",
      "glb": "assets/viewer/obj10_baseline.glb",
-     "size_mb": 0.11,
+     "size_mb": 0.77,
      "poster": "assets/viewer/obj10_baseline_poster.webp"
     }
    ]
   }
  ],
- "note": "All variants share one frame (benchmark frame rotated to glTF Y-up) and one bounding box, so switching variants keeps camera and mesh in place. Unlit albedo look (KHR_materials_unlit); GLBs use meshopt + quantisation, so the meshopt decoder is required. Ours is decimated to at most 200k faces; the baseline shown per object is the best baseline by CD-L1 on this object."
+ "note": ""
 }
