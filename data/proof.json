@@ -3,6 +3,23 @@
  "iou_definition": "",
  "pairs": [
   {
+   "id": "p11",
+   "photo": "assets/proof/p11_input.webp",
+   "ours": "assets/proof/p11_ours.webp",
+   "gt": "assets/proof/p11_gt.webp",
+   "baseline": "assets/proof/p11_baseline.webp",
+   "baseline_name": "Pixal3D",
+   "best_baseline_rule": "",
+   "overlay_iou": 0.904,
+   "baseline_overlay_iou": 0.94,
+   "ours_better_geometry": false,
+   "input_crop_px": 623,
+   "w": 1200,
+   "h": 1200,
+   "caption": "Selected example, Factory / Robot Table scene. Same camera and crop for all images. The input is a rendered frame of a simulated benchmark scene; it is a crop of the source frame shown enlarged, so it looks soft.",
+   "thumb": "assets/proof/p11_thumb.webp"
+  },
+  {
    "id": "p06",
    "photo": "assets/proof/p06_input.webp",
    "ours": "assets/proof/p06_ours.webp",
@@ -54,23 +71,6 @@
    "h": 1200,
    "caption": "Selected example, Park / Ground scene. Same camera and crop for all images. The input is a rendered frame of a simulated benchmark scene; it is a crop of the source frame shown enlarged, so it looks soft.",
    "thumb": "assets/proof/p10_thumb.webp"
-  },
-  {
-   "id": "p11",
-   "photo": "assets/proof/p11_input.webp",
-   "ours": "assets/proof/p11_ours.webp",
-   "gt": "assets/proof/p11_gt.webp",
-   "baseline": "assets/proof/p11_baseline.webp",
-   "baseline_name": "Pixal3D",
-   "best_baseline_rule": "",
-   "overlay_iou": 0.904,
-   "baseline_overlay_iou": 0.94,
-   "ours_better_geometry": false,
-   "input_crop_px": 623,
-   "w": 1200,
-   "h": 1200,
-   "caption": "Selected example, Factory / Robot Table scene. Same camera and crop for all images. The input is a rendered frame of a simulated benchmark scene; it is a crop of the source frame shown enlarged, so it looks soft.",
-   "thumb": "assets/proof/p11_thumb.webp"
   },
   {
    "id": "p02",
