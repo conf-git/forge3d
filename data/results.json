@@ -1,0 +1,1838 @@
+{
+  "tables": [
+    {
+      "id": "forge3dbench150_4v",
+      "title": "FORGE3DBench-150, 4 views",
+      "dataset": "FORGE3DBench-150 (150 objects from the 808-object benchmark, one per asset)",
+      "views": 4,
+      "n_objects": 144,
+      "protocol": "obs-grounded reconstruction; baselines registered to ground truth; one run per method",
+      "columns": [
+        "IV LPIPS",
+        "IV PSNR",
+        "IV SSIM",
+        "NV LPIPS",
+        "NV PSNR",
+        "NV SSIM",
+        "CD-L1",
+        "F@0.01"
+      ],
+      "lower_is_better": [
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        false
+      ],
+      "rows": [
+        {
+          "method": "ReconViaGen",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": 0.20984148675860423,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_4v"
+            },
+            {
+              "v": 15.157371942367819,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_4v"
+            },
+            {
+              "v": 0.7760868784971535,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_4v"
+            },
+            {
+              "v": 0.10466432279214065,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_4v"
+            },
+            {
+              "v": 18.361060796236547,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_4v"
+            },
+            {
+              "v": 0.9111565230414271,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_4v"
+            },
+            {
+              "v": 0.023426211901500613,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_4v"
+            },
+            {
+              "v": 0.4151756970418824,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_4v"
+            }
+          ]
+        },
+        {
+          "method": "Amodal3R",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": 0.24316125793201435,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_4v"
+            },
+            {
+              "v": 14.190595235261652,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_4v"
+            },
+            {
+              "v": 0.7479411414824426,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_4v"
+            },
+            {
+              "v": 0.11587931356997513,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_4v"
+            },
+            {
+              "v": 17.394782757593525,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_4v"
+            },
+            {
+              "v": 0.9022768557554594,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_4v"
+            },
+            {
+              "v": 0.02592074284135985,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_4v"
+            },
+            {
+              "v": 0.35445779031659996,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_4v"
+            }
+          ]
+        },
+        {
+          "method": "Hunyuan3D-2mv",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": 0.23466309104373473,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_4v"
+            },
+            {
+              "v": 15.276988511284193,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_4v"
+            },
+            {
+              "v": 0.7791533313898577,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_4v"
+            },
+            {
+              "v": 0.10732818094132839,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_4v"
+            },
+            {
+              "v": 18.804169199256986,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_4v"
+            },
+            {
+              "v": 0.9167320654141131,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_4v"
+            },
+            {
+              "v": 0.022075098153436556,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_4v"
+            },
+            {
+              "v": 0.37984321765705115,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_4v"
+            }
+          ]
+        },
+        {
+          "method": "Cupid (our multi-view adaptation)",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": 0.31007811731736484,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_4v"
+            },
+            {
+              "v": 12.926071073446009,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_4v"
+            },
+            {
+              "v": 0.7500678003351722,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_4v"
+            },
+            {
+              "v": 0.14191514069426814,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_4v"
+            },
+            {
+              "v": 16.660823417758497,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_4v"
+            },
+            {
+              "v": 0.9056529333401058,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_4v"
+            },
+            {
+              "v": 0.04795286170944261,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_4v"
+            },
+            {
+              "v": 0.2492603780491562,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_4v"
+            }
+          ]
+        },
+        {
+          "method": "Pixal3D",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_4v_pending"
+            }
+          ]
+        },
+        {
+          "method": "FORGE3D (ours)",
+          "is_ours": true,
+          "cells": [
+            {
+              "v": 0.12161492861923762,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_4v"
+            },
+            {
+              "v": 19.371629523734253,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_4v"
+            },
+            {
+              "v": 0.8557168731672896,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_4v"
+            },
+            {
+              "v": 0.08226832340127051,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_4v"
+            },
+            {
+              "v": 19.908539039945158,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_4v"
+            },
+            {
+              "v": 0.9239983659720532,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_4v"
+            },
+            {
+              "v": 0.012047647697424205,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_4v"
+            },
+            {
+              "v": 0.736770981664045,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_4v"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Every method reconstructs each object from the same input views (RGB and object masks) and the same cameras. Metrics: LPIPS/PSNR/SSIM on input-view (IV) renders and on a novel-view (NV) orbit, Chamfer-L1 in unit-cube units, F-score at threshold 0.01; each cell is the mean over objects that have every part.",
+        "Alignment: the shown baselines (ReconViaGen, Amodal3R, Hunyuan3D-2mv, Cupid) produce meshes in their own object frame, so each is registered to the ground-truth frame by a dense rotation search followed by rigid ICP, with an input-view silhouette tie-break; the pending Pixal3D row would be placed by camera only, since its output is pixel-aligned. FORGE3D is generated directly in the ground-truth frame and is not re-aligned.",
+        "Inputs differ in one respect: FORGE3D additionally uses the metric depth of the input views (oracle depth from the renderer, not predicted depth), while the baselines take RGB and masks only. FORGE3D is therefore grounded in the ground-truth frame through that depth; this is part of the method, not a like-for-like RGB-only comparison.",
+        "Input-view (IV) caveat: the IV reference is the shaded input image, while predictions are rendered unlit, which adds a roughly constant penalty for every method; absolute IV values are not meaningful and IV rewards methods that copy lighting baked into the input. Novel-view (NV) gaps are smaller than IV gaps.",
+        "Checkpoint and overlap: the FORGE3D rows come from one training run at a fixed checkpoint and a single sampling seed, and the numbers may change in the final paper. Whether the training data overlaps these evaluation objects has not been audited.",
+        "4 views = one frontal view plus three companion views, identical for every method.",
+        "Evaluated on n = 144 of the 150 selected objects: 6 objects have an untextured ground truth (no novel-view appearance reference), so they are excluded for every method.",
+        "Pixal3D row pending: its FORGE3DBench regeneration is not finished, so no number is shown.",
+        "Cupid: the released code is single-view; the multi-view variant here is our own implementation of the paper's multi-view fusion."
+      ],
+      "ours_vs_best_baseline": {
+        "IV LPIPS": {
+          "best_baseline": "ReconViaGen",
+          "best_baseline_v": 0.20984148675860423,
+          "ours_v": 0.12161492861923762,
+          "rel_change": -0.4204438288261843,
+          "rel_improvement": 0.4204438288261843,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "IV PSNR": {
+          "best_baseline": "Hunyuan3D-2mv",
+          "best_baseline_v": 15.276988511284193,
+          "ours_v": 19.371629523734253,
+          "rel_change": 0.268026712818799,
+          "rel_improvement": 0.268026712818799,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "IV SSIM": {
+          "best_baseline": "Hunyuan3D-2mv",
+          "best_baseline_v": 0.7791533313898577,
+          "ours_v": 0.8557168731672896,
+          "rel_change": 0.09826505091219662,
+          "rel_improvement": 0.09826505091219662,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "NV LPIPS": {
+          "best_baseline": "ReconViaGen",
+          "best_baseline_v": 0.10466432279214065,
+          "ours_v": 0.08226832340127051,
+          "rel_change": -0.21397930826292874,
+          "rel_improvement": 0.21397930826292874,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "NV PSNR": {
+          "best_baseline": "Hunyuan3D-2mv",
+          "best_baseline_v": 18.804169199256986,
+          "ours_v": 19.908539039945158,
+          "rel_change": 0.05873005230838962,
+          "rel_improvement": 0.05873005230838962,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "NV SSIM": {
+          "best_baseline": "Hunyuan3D-2mv",
+          "best_baseline_v": 0.9167320654141131,
+          "ours_v": 0.9239983659720532,
+          "rel_change": 0.007926307840729558,
+          "rel_improvement": 0.007926307840729558,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "CD-L1": {
+          "best_baseline": "Hunyuan3D-2mv",
+          "best_baseline_v": 0.022075098153436556,
+          "ours_v": 0.012047647697424205,
+          "rel_change": -0.454242621541926,
+          "rel_improvement": 0.454242621541926,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "F@0.01": {
+          "best_baseline": "ReconViaGen",
+          "best_baseline_v": 0.4151756970418824,
+          "ours_v": 0.736770981664045,
+          "rel_change": 0.7746004568993846,
+          "rel_improvement": 0.7746004568993846,
+          "ours_better": true,
+          "ours_rank": 1
+        }
+      },
+      "combined": {
+        "ReconViaGen": {
+          "lpips": 0.15725290477537243,
+          "psnr": 16.759216369302184,
+          "ssim": 0.8436217007692903
+        },
+        "Amodal3R": {
+          "lpips": 0.17952028575099474,
+          "psnr": 15.79268899642759,
+          "ssim": 0.825108998618951
+        },
+        "Hunyuan3D-2mv": {
+          "lpips": 0.17099563599253156,
+          "psnr": 17.04057885527059,
+          "ssim": 0.8479426984019853
+        },
+        "Cupid (our multi-view adaptation)": {
+          "lpips": 0.2259966290058165,
+          "psnr": 14.793447245602252,
+          "ssim": 0.827860366837639
+        },
+        "FORGE3D (ours)": {
+          "lpips": 0.10194162601025406,
+          "psnr": 19.640084281839705,
+          "ssim": 0.8898576195696715
+        }
+      }
+    },
+    {
+      "id": "toys4k300_4v",
+      "title": "Toys4K-300, 4 views",
+      "dataset": "Toys4K (300 fixed objects)",
+      "views": 4,
+      "n_objects": 300,
+      "protocol": "obs-grounded reconstruction; baselines registered to ground truth; one run per method",
+      "columns": [
+        "IV LPIPS",
+        "IV PSNR",
+        "IV SSIM",
+        "NV LPIPS",
+        "NV PSNR",
+        "NV SSIM",
+        "CD-L1",
+        "F@0.01"
+      ],
+      "lower_is_better": [
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        false
+      ],
+      "rows": [
+        {
+          "method": "ReconViaGen",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": 0.15083203882599872,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_rvg_4v"
+            },
+            {
+              "v": 18.14167591333389,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_rvg_4v"
+            },
+            {
+              "v": 0.8576669623454412,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_rvg_4v"
+            },
+            {
+              "v": 0.0779760888261242,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_rvg_4v"
+            },
+            {
+              "v": 21.123707363473045,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_rvg_4v"
+            },
+            {
+              "v": 0.9246113555298913,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_rvg_4v"
+            },
+            {
+              "v": 0.014685525968670845,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_rvg_4v"
+            },
+            {
+              "v": 0.5160597419366241,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_rvg_4v"
+            }
+          ]
+        },
+        {
+          "method": "Amodal3R",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": 0.21052703136733422,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_amodal3r_4v"
+            },
+            {
+              "v": 16.013049192031225,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_amodal3r_4v"
+            },
+            {
+              "v": 0.8254963948825995,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_amodal3r_4v"
+            },
+            {
+              "v": 0.1076503639328035,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_amodal3r_4v"
+            },
+            {
+              "v": 18.775800210369955,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_amodal3r_4v"
+            },
+            {
+              "v": 0.9095234554012617,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_amodal3r_4v"
+            },
+            {
+              "v": 0.022116713367092113,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_amodal3r_4v"
+            },
+            {
+              "v": 0.4070974227009962,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_amodal3r_4v"
+            }
+          ]
+        },
+        {
+          "method": "Hunyuan3D-2mv",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": 0.1687372797758629,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_hy3d2mv_4v"
+            },
+            {
+              "v": 17.941787892182667,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_hy3d2mv_4v"
+            },
+            {
+              "v": 0.8677997528513273,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_hy3d2mv_4v"
+            },
+            {
+              "v": 0.08508070415066969,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_hy3d2mv_4v"
+            },
+            {
+              "v": 20.876334735022652,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_hy3d2mv_4v"
+            },
+            {
+              "v": 0.9203146283576886,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_hy3d2mv_4v"
+            },
+            {
+              "v": 0.01653152747467781,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_hy3d2mv_4v"
+            },
+            {
+              "v": 0.5139048928457002,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_hy3d2mv_4v"
+            }
+          ]
+        },
+        {
+          "method": "Cupid (our multi-view adaptation)",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": 0.1898862743913196,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_cupid_4v"
+            },
+            {
+              "v": 17.39462271809578,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_cupid_4v"
+            },
+            {
+              "v": 0.8609523716320594,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_cupid_4v"
+            },
+            {
+              "v": 0.09901118468823067,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_cupid_4v"
+            },
+            {
+              "v": 20.44032811615202,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_cupid_4v"
+            },
+            {
+              "v": 0.9178436835027405,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_cupid_4v"
+            },
+            {
+              "v": 0.022675668430359414,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_cupid_4v"
+            },
+            {
+              "v": 0.48075223691761493,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_cupid_4v"
+            }
+          ]
+        },
+        {
+          "method": "Pixal3D",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "t4k300_pixal3d_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "t4k300_pixal3d_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "t4k300_pixal3d_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "t4k300_pixal3d_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "t4k300_pixal3d_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "t4k300_pixal3d_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "t4k300_pixal3d_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "t4k300_pixal3d_4v_pending"
+            }
+          ]
+        },
+        {
+          "method": "FORGE3D (ours)",
+          "is_ours": true,
+          "cells": [
+            {
+              "v": 0.08753639471561958,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_ours_4v"
+            },
+            {
+              "v": 22.394569291273754,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_ours_4v"
+            },
+            {
+              "v": 0.9157145836949349,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_ours_4v"
+            },
+            {
+              "v": 0.0511850795744168,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_ours_4v"
+            },
+            {
+              "v": 25.06529264026218,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_ours_4v"
+            },
+            {
+              "v": 0.9425565674735439,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_ours_4v"
+            },
+            {
+              "v": 0.008456757709694406,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_ours_4v"
+            },
+            {
+              "v": 0.8502276252706845,
+              "frozen": true,
+              "pending": false,
+              "src": "t4k300_ours_4v"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Every method reconstructs each object from the same input views (RGB and object masks) and the same cameras. Metrics: LPIPS/PSNR/SSIM on input-view (IV) renders and on a novel-view (NV) orbit, Chamfer-L1 in unit-cube units, F-score at threshold 0.01; each cell is the mean over objects that have every part.",
+        "Alignment: the shown baselines (ReconViaGen, Amodal3R, Hunyuan3D-2mv, Cupid) produce meshes in their own object frame, so each is registered to the ground-truth frame by a dense rotation search followed by rigid ICP, with an input-view silhouette tie-break; the pending Pixal3D row would be placed by camera only, since its output is pixel-aligned. FORGE3D is generated directly in the ground-truth frame and is not re-aligned.",
+        "Inputs differ in one respect: FORGE3D additionally uses the metric depth of the input views (oracle depth from the renderer, not predicted depth), while the baselines take RGB and masks only. FORGE3D is therefore grounded in the ground-truth frame through that depth; this is part of the method, not a like-for-like RGB-only comparison.",
+        "Input-view (IV) caveat: the IV reference is the shaded input image, while predictions are rendered unlit, which adds a roughly constant penalty for every method; absolute IV values are not meaningful and IV rewards methods that copy lighting baked into the input. Novel-view (NV) gaps are smaller than IV gaps.",
+        "Checkpoint and overlap: the FORGE3D rows come from one training run at a fixed checkpoint and a single sampling seed, and the numbers may change in the final paper. Whether the training data overlaps these evaluation objects has not been audited.",
+        "4 views = one frontal view plus three randomly drawn companion views, identical for every method (Hunyuan3D-2mv receives them in its fixed view slots).",
+        "Toys4K-300 is a fixed 300-object list covering all 85 categories; n = 300 for every row.",
+        "Some of these objects were also used to monitor training during development, so this set is not a clean held-out set.",
+        "Pixal3D row pending: no number is shown until its regeneration is final.",
+        "Cupid: the released code is single-view; the multi-view variant here is our own implementation of the paper's multi-view fusion."
+      ],
+      "ours_vs_best_baseline": {
+        "IV LPIPS": {
+          "best_baseline": "ReconViaGen",
+          "best_baseline_v": 0.15083203882599872,
+          "ours_v": 0.08753639471561958,
+          "rel_change": -0.41964323099416295,
+          "rel_improvement": 0.41964323099416295,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "IV PSNR": {
+          "best_baseline": "ReconViaGen",
+          "best_baseline_v": 18.14167591333389,
+          "ours_v": 22.394569291273754,
+          "rel_change": 0.23442670888051984,
+          "rel_improvement": 0.23442670888051984,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "IV SSIM": {
+          "best_baseline": "Hunyuan3D-2mv",
+          "best_baseline_v": 0.8677997528513273,
+          "ours_v": 0.9157145836949349,
+          "rel_change": 0.055214155899646164,
+          "rel_improvement": 0.055214155899646164,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "NV LPIPS": {
+          "best_baseline": "ReconViaGen",
+          "best_baseline_v": 0.0779760888261242,
+          "ours_v": 0.0511850795744168,
+          "rel_change": -0.34357980318104453,
+          "rel_improvement": 0.34357980318104453,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "NV PSNR": {
+          "best_baseline": "ReconViaGen",
+          "best_baseline_v": 21.123707363473045,
+          "ours_v": 25.06529264026218,
+          "rel_change": 0.18659533617687268,
+          "rel_improvement": 0.18659533617687268,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "NV SSIM": {
+          "best_baseline": "ReconViaGen",
+          "best_baseline_v": 0.9246113555298913,
+          "ours_v": 0.9425565674735439,
+          "rel_change": 0.019408383680696074,
+          "rel_improvement": 0.019408383680696074,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "CD-L1": {
+          "best_baseline": "ReconViaGen",
+          "best_baseline_v": 0.014685525968670845,
+          "ours_v": 0.008456757709694406,
+          "rel_change": -0.4241433553190054,
+          "rel_improvement": 0.4241433553190054,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "F@0.01": {
+          "best_baseline": "ReconViaGen",
+          "best_baseline_v": 0.5160597419366241,
+          "ours_v": 0.8502276252706845,
+          "rel_change": 0.6475372058281941,
+          "rel_improvement": 0.6475372058281941,
+          "ours_better": true,
+          "ours_rank": 1
+        }
+      },
+      "combined": {
+        "ReconViaGen": {
+          "lpips": 0.11440406382606146,
+          "psnr": 19.632691638403468,
+          "ssim": 0.8911391589376663
+        },
+        "Amodal3R": {
+          "lpips": 0.15908869765006886,
+          "psnr": 17.39442470120059,
+          "ssim": 0.8675099251419306
+        },
+        "Hunyuan3D-2mv": {
+          "lpips": 0.1269089919632663,
+          "psnr": 19.40906131360266,
+          "ssim": 0.894057190604508
+        },
+        "Cupid (our multi-view adaptation)": {
+          "lpips": 0.14444872953977514,
+          "psnr": 18.9174754171239,
+          "ssim": 0.8893980275673999
+        },
+        "FORGE3D (ours)": {
+          "lpips": 0.0693607371450182,
+          "psnr": 23.729930965767966,
+          "ssim": 0.9291355755842394
+        }
+      }
+    },
+    {
+      "id": "forge3dbench150_1v",
+      "title": "FORGE3DBench-150, 1 view",
+      "dataset": "FORGE3DBench-150 (150 objects from the 808-object benchmark, one per asset)",
+      "views": 1,
+      "n_objects": 144,
+      "protocol": "obs-grounded reconstruction; baselines registered to ground truth; one run per method",
+      "columns": [
+        "IV LPIPS",
+        "IV PSNR",
+        "IV SSIM",
+        "NV LPIPS",
+        "NV PSNR",
+        "NV SSIM",
+        "CD-L1",
+        "F@0.01"
+      ],
+      "lower_is_better": [
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        false
+      ],
+      "rows": [
+        {
+          "method": "ReconViaGen",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": 0.23949797614477575,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_1v"
+            },
+            {
+              "v": 14.548099756240845,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_1v"
+            },
+            {
+              "v": 0.7547088188843595,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_1v"
+            },
+            {
+              "v": 0.12609321413172572,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_1v"
+            },
+            {
+              "v": 17.491688479979835,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_1v"
+            },
+            {
+              "v": 0.9063996501887838,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_1v"
+            },
+            {
+              "v": 0.03683236558895765,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_1v"
+            },
+            {
+              "v": 0.2974755938630551,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_rvg_1v"
+            }
+          ]
+        },
+        {
+          "method": "Amodal3R",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": 0.25048365048132837,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_1v"
+            },
+            {
+              "v": 14.069646875063578,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_1v"
+            },
+            {
+              "v": 0.7370864297780726,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_1v"
+            },
+            {
+              "v": 0.12570516529161035,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_1v"
+            },
+            {
+              "v": 17.06371107076605,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_1v"
+            },
+            {
+              "v": 0.8993167511566921,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_1v"
+            },
+            {
+              "v": 0.030019674003900338,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_1v"
+            },
+            {
+              "v": 0.32671104011953706,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_amodal3r_1v"
+            }
+          ]
+        },
+        {
+          "method": "Hunyuan3D-2mv",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": 0.2335151818373965,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_1v"
+            },
+            {
+              "v": 15.606391429901123,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_1v"
+            },
+            {
+              "v": 0.774289321154356,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_1v"
+            },
+            {
+              "v": 0.11602376124345162,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_1v"
+            },
+            {
+              "v": 18.50287736152057,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_1v"
+            },
+            {
+              "v": 0.9154467049089293,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_1v"
+            },
+            {
+              "v": 0.028331357824046992,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_1v"
+            },
+            {
+              "v": 0.343248485121876,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_hy3d2mv_1v"
+            }
+          ]
+        },
+        {
+          "method": "Cupid",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": 0.2657476620386458,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_1v"
+            },
+            {
+              "v": 14.434108253982332,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_1v"
+            },
+            {
+              "v": 0.7655153605673048,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_1v"
+            },
+            {
+              "v": 0.12864129999636337,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_1v"
+            },
+            {
+              "v": 17.443472638450288,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_1v"
+            },
+            {
+              "v": 0.9094322421243071,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_1v"
+            },
+            {
+              "v": 0.041370943955068164,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_1v"
+            },
+            {
+              "v": 0.28916112716413206,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_cupid_1v"
+            }
+          ]
+        },
+        {
+          "method": "Pixal3D",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_1v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_1v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_1v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_1v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_1v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_1v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_1v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "fb150_pixal3d_1v_pending"
+            }
+          ]
+        },
+        {
+          "method": "FORGE3D (ours)",
+          "is_ours": true,
+          "cells": [
+            {
+              "v": 0.1474807121946166,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_1v"
+            },
+            {
+              "v": 17.694983104864757,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_1v"
+            },
+            {
+              "v": 0.821314610954788,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_1v"
+            },
+            {
+              "v": 0.10765152478712411,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_1v"
+            },
+            {
+              "v": 18.322403136364837,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_1v"
+            },
+            {
+              "v": 0.9150700029330672,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_1v"
+            },
+            {
+              "v": 0.028577745888873726,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_1v"
+            },
+            {
+              "v": 0.5179151570838358,
+              "frozen": true,
+              "pending": false,
+              "src": "fb150_ours_1v"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Every method reconstructs each object from the same input views (RGB and object masks) and the same cameras. Metrics: LPIPS/PSNR/SSIM on input-view (IV) renders and on a novel-view (NV) orbit, Chamfer-L1 in unit-cube units, F-score at threshold 0.01; each cell is the mean over objects that have every part.",
+        "Alignment: the shown baselines (ReconViaGen, Amodal3R, Hunyuan3D-2mv, Cupid) produce meshes in their own object frame, so each is registered to the ground-truth frame by a dense rotation search followed by rigid ICP, with an input-view silhouette tie-break; the pending Pixal3D row would be placed by camera only, since its output is pixel-aligned. FORGE3D is generated directly in the ground-truth frame and is not re-aligned.",
+        "Inputs differ in one respect: FORGE3D additionally uses the metric depth of the input views (oracle depth from the renderer, not predicted depth), while the baselines take RGB and masks only. FORGE3D is therefore grounded in the ground-truth frame through that depth; this is part of the method, not a like-for-like RGB-only comparison.",
+        "Input-view (IV) caveat: the IV reference is the shaded input image, while predictions are rendered unlit, which adds a roughly constant penalty for every method; absolute IV values are not meaningful and IV rewards methods that copy lighting baked into the input. Novel-view (NV) gaps are smaller than IV gaps.",
+        "Checkpoint and overlap: the FORGE3D rows come from one training run at a fixed checkpoint and a single sampling seed, and the numbers may change in the final paper. Whether the training data overlaps these evaluation objects has not been audited.",
+        "1 view = the frontal view.",
+        "Evaluated on n = 144 of the 150 selected objects: 6 objects have an untextured ground truth (no novel-view appearance reference), so they are excluded for every method.",
+        "Pixal3D row pending: its FORGE3DBench regeneration is not finished, so no number is shown.",
+        "Cupid: single-view output of the released code.",
+        "Hunyuan3D-2mv receives its single input image in the front slot."
+      ],
+      "ours_vs_best_baseline": {
+        "IV LPIPS": {
+          "best_baseline": "Hunyuan3D-2mv",
+          "best_baseline_v": 0.2335151818373965,
+          "ours_v": 0.1474807121946166,
+          "rel_change": -0.3684320178492217,
+          "rel_improvement": 0.3684320178492217,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "IV PSNR": {
+          "best_baseline": "Hunyuan3D-2mv",
+          "best_baseline_v": 15.606391429901123,
+          "ours_v": 17.694983104864757,
+          "rel_change": 0.13382925094150783,
+          "rel_improvement": 0.13382925094150783,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "IV SSIM": {
+          "best_baseline": "Hunyuan3D-2mv",
+          "best_baseline_v": 0.774289321154356,
+          "ours_v": 0.821314610954788,
+          "rel_change": 0.06073348619909145,
+          "rel_improvement": 0.06073348619909145,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "NV LPIPS": {
+          "best_baseline": "Hunyuan3D-2mv",
+          "best_baseline_v": 0.11602376124345162,
+          "ours_v": 0.10765152478712411,
+          "rel_change": -0.07215967114494866,
+          "rel_improvement": 0.07215967114494866,
+          "ours_better": true,
+          "ours_rank": 1
+        },
+        "NV PSNR": {
+          "best_baseline": "Hunyuan3D-2mv",
+          "best_baseline_v": 18.50287736152057,
+          "ours_v": 18.322403136364837,
+          "rel_change": -0.00975384647638949,
+          "rel_improvement": -0.00975384647638949,
+          "ours_better": false,
+          "ours_rank": 2
+        },
+        "NV SSIM": {
+          "best_baseline": "Hunyuan3D-2mv",
+          "best_baseline_v": 0.9154467049089293,
+          "ours_v": 0.9150700029330672,
+          "rel_change": -0.0004114952556409314,
+          "rel_improvement": -0.0004114952556409314,
+          "ours_better": false,
+          "ours_rank": 2
+        },
+        "CD-L1": {
+          "best_baseline": "Hunyuan3D-2mv",
+          "best_baseline_v": 0.028331357824046992,
+          "ours_v": 0.028577745888873726,
+          "rel_change": 0.008696655711206543,
+          "rel_improvement": -0.008696655711206543,
+          "ours_better": false,
+          "ours_rank": 2
+        },
+        "F@0.01": {
+          "best_baseline": "Hunyuan3D-2mv",
+          "best_baseline_v": 0.343248485121876,
+          "ours_v": 0.5179151570838358,
+          "rel_change": 0.5088636353338648,
+          "rel_improvement": 0.5088636353338648,
+          "ours_better": true,
+          "ours_rank": 1
+        }
+      },
+      "combined": {
+        "ReconViaGen": {
+          "lpips": 0.18279559513825072,
+          "psnr": 16.01989411811034,
+          "ssim": 0.8305542345365716
+        },
+        "Amodal3R": {
+          "lpips": 0.18809440788646936,
+          "psnr": 15.566678972914815,
+          "ssim": 0.8182015904673823
+        },
+        "Hunyuan3D-2mv": {
+          "lpips": 0.17476947154042405,
+          "psnr": 17.05463439571085,
+          "ssim": 0.8448680130316426
+        },
+        "Cupid": {
+          "lpips": 0.19719448101750459,
+          "psnr": 15.93879044621631,
+          "ssim": 0.837473801345806
+        },
+        "FORGE3D (ours)": {
+          "lpips": 0.12756611849087035,
+          "psnr": 18.008693120614797,
+          "ssim": 0.8681923069439276
+        }
+      }
+    },
+    {
+      "id": "omni3d300_4v",
+      "title": "OmniObject3D-300, 4 views",
+      "dataset": "OmniObject3D (300 fixed objects)",
+      "views": 4,
+      "n_objects": null,
+      "protocol": "pending",
+      "columns": [
+        "IV LPIPS",
+        "IV PSNR",
+        "IV SSIM",
+        "NV LPIPS",
+        "NV PSNR",
+        "NV SSIM",
+        "CD-L1",
+        "F@0.01"
+      ],
+      "lower_is_better": [
+        true,
+        false,
+        false,
+        true,
+        false,
+        false,
+        true,
+        false
+      ],
+      "rows": [
+        {
+          "method": "ReconViaGen",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            }
+          ]
+        },
+        {
+          "method": "Amodal3R",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            }
+          ]
+        },
+        {
+          "method": "Hunyuan3D-2mv",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            }
+          ]
+        },
+        {
+          "method": "Cupid",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            }
+          ]
+        },
+        {
+          "method": "Pixal3D",
+          "is_ours": false,
+          "cells": [
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            }
+          ]
+        },
+        {
+          "method": "FORGE3D (ours)",
+          "is_ours": true,
+          "cells": [
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            },
+            {
+              "v": null,
+              "frozen": false,
+              "pending": true,
+              "src": "omni300_4v_pending"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Pending: not every method has been scored on this set under one shared protocol, so no row is shown. Numbers will appear only when all rows are final."
+      ],
+      "ours_vs_best_baseline": {
+        "IV LPIPS": null,
+        "IV PSNR": null,
+        "IV SSIM": null,
+        "NV LPIPS": null,
+        "NV PSNR": null,
+        "NV SSIM": null,
+        "CD-L1": null,
+        "F@0.01": null
+      },
+      "combined": {}
+    }
+  ],
+  "headline": [
+    {
+      "id": "fb150_4v_cd",
+      "label": "FORGE3DBench-150, 4 views: Chamfer-L1, ours vs best baseline (lower is better)",
+      "value": "0.0120 vs 0.0221",
+      "detail": "Chamfer-L1 in unit-cube units; best baseline for this metric: Hunyuan3D-2mv; 45% better; n = 144 objects, 4 views.",
+      "frozen": true,
+      "src": "fb150_4v_ours_vs_best"
+    },
+    {
+      "id": "fb150_4v_f01",
+      "label": "FORGE3DBench-150, 4 views: F@0.01, ours vs best baseline (higher is better)",
+      "value": "0.737 vs 0.415",
+      "detail": "F-score at 0.01; best baseline for this metric: ReconViaGen; 77% better; n = 144 objects, 4 views.",
+      "frozen": true,
+      "src": "fb150_4v_ours_vs_best"
+    },
+    {
+      "id": "fb150_1v_cd",
+      "label": "FORGE3DBench-150, 1 view: Chamfer-L1, ours vs best baseline (lower is better)",
+      "value": "0.0286 vs 0.0283",
+      "detail": "Chamfer-L1 in unit-cube units; at one view the two are tied or ours is behind; best baseline for this metric: Hunyuan3D-2mv; 1% worse; n = 144 objects, 1 view.",
+      "frozen": true,
+      "src": "fb150_1v_ours_vs_best"
+    },
+    {
+      "id": "bench_scenes",
+      "label": "Simulated scenes",
+      "value": "120",
+      "detail": "6 capture configurations x 20 scenes",
+      "frozen": true,
+      "src": "bench_scene_json"
+    },
+    {
+      "id": "bench_views",
+      "label": "Calibrated views per scene",
+      "value": "24",
+      "detail": "1440 x 1440 px, pinhole cameras with known intrinsics and poses",
+      "frozen": true,
+      "src": "bench_cameras_json"
+    },
+    {
+      "id": "bench_assets",
+      "label": "Unique assets with ground-truth meshes",
+      "value": "321",
+      "detail": "counted from the scene descriptions",
+      "frozen": true,
+      "src": "bench_scene_json"
+    },
+    {
+      "id": "bench_objects",
+      "label": "Objects in the full benchmark",
+      "value": "808",
+      "detail": "every object is visible at least 40% (visible area over amodal area) in at least one view",
+      "frozen": true,
+      "src": "bench_manifest"
+    },
+    {
+      "id": "bench_eval_subset",
+      "label": "Evaluation subset",
+      "value": "150",
+      "detail": "one object per asset, every scene represented; 144 scored for appearance",
+      "frozen": true,
+      "src": "fb150_selection"
+    }
+  ]
+}

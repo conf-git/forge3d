@@ -1,0 +1,434 @@
+{
+ "stats": {
+  "assets": 321,
+  "scenes": 120,
+  "configs": 6,
+  "scenes_per_config": 20,
+  "views_per_scene": 24,
+  "objects": 808,
+  "eval_subset": 150
+ },
+ "configs": [
+  {
+   "id": "cfg_a",
+   "env": "Factory",
+   "placement": "Ground",
+   "label": "Factory \u00b7 Ground",
+   "tile": "assets/bench/cfg_a.webp",
+   "blurb": "Objects lying directly on the floor of an indoor industrial hall, photographed from low camera heights.",
+   "scene_tiles": [
+    "assets/bench/cfg_a_s1.webp",
+    "assets/bench/cfg_a_s2.webp",
+    "assets/bench/cfg_a_s3.webp"
+   ]
+  },
+  {
+   "id": "cfg_b",
+   "env": "Factory",
+   "placement": "Table",
+   "label": "Factory \u00b7 Table",
+   "tile": "assets/bench/cfg_b.webp",
+   "blurb": "Objects on a wooden table inside the same industrial hall; lighting is uneven and some frames are dim.",
+   "scene_tiles": [
+    "assets/bench/cfg_b_s1.webp",
+    "assets/bench/cfg_b_s2.webp",
+    "assets/bench/cfg_b_s3.webp"
+   ]
+  },
+  {
+   "id": "cfg_c",
+   "env": "Factory",
+   "placement": "Robot table",
+   "label": "Factory \u00b7 Robot table",
+   "tile": "assets/bench/cfg_c.webp",
+   "blurb": "A table scene where a robot hand reaches in and may hold or occlude objects; this hall setting is the darkest configuration.",
+   "scene_tiles": [
+    "assets/bench/cfg_c_s1.webp",
+    "assets/bench/cfg_c_s2.webp",
+    "assets/bench/cfg_c_s3.webp"
+   ]
+  },
+  {
+   "id": "cfg_d",
+   "env": "Park",
+   "placement": "Ground",
+   "label": "Park \u00b7 Ground",
+   "tile": "assets/bench/cfg_d.webp",
+   "blurb": "Objects on paving, dirt or grass in an outdoor park under strong sun and cast shadows.",
+   "scene_tiles": [
+    "assets/bench/cfg_d_s1.webp",
+    "assets/bench/cfg_d_s2.webp",
+    "assets/bench/cfg_d_s3.webp"
+   ]
+  },
+  {
+   "id": "cfg_e",
+   "env": "Park",
+   "placement": "Table",
+   "label": "Park \u00b7 Table",
+   "tile": "assets/bench/cfg_e.webp",
+   "blurb": "Objects on a table outdoors, with sunlight, shadows and varied backgrounds.",
+   "scene_tiles": [
+    "assets/bench/cfg_e_s1.webp",
+    "assets/bench/cfg_e_s2.webp",
+    "assets/bench/cfg_e_s3.webp"
+   ]
+  },
+  {
+   "id": "cfg_f",
+   "env": "Park",
+   "placement": "Robot table",
+   "label": "Park \u00b7 Robot table",
+   "tile": "assets/bench/cfg_f.webp",
+   "blurb": "An outdoor table where a robot hand reaches in and may hold or occlude objects (the robot-grasp case).",
+   "scene_tiles": [
+    "assets/bench/cfg_f_s1.webp",
+    "assets/bench/cfg_f_s2.webp",
+    "assets/bench/cfg_f_s3.webp"
+   ]
+  }
+ ],
+ "viewpoints": {
+  "count": 24,
+  "frames": [
+   {
+    "i": 0,
+    "path": "assets/bench/view/v00.webp",
+    "azimuth_deg": 0.0,
+    "elevation_deg": 20.0
+   },
+   {
+    "i": 1,
+    "path": "assets/bench/view/v01.webp",
+    "azimuth_deg": 2.3,
+    "elevation_deg": 39.7
+   },
+   {
+    "i": 2,
+    "path": "assets/bench/view/v02.webp",
+    "azimuth_deg": 15.2,
+    "elevation_deg": 15.7
+   },
+   {
+    "i": 3,
+    "path": "assets/bench/view/v03.webp",
+    "azimuth_deg": 28.8,
+    "elevation_deg": 77.8
+   },
+   {
+    "i": 4,
+    "path": "assets/bench/view/v04.webp",
+    "azimuth_deg": 39.4,
+    "elevation_deg": 46.7
+   },
+   {
+    "i": 5,
+    "path": "assets/bench/view/v05.webp",
+    "azimuth_deg": 44.8,
+    "elevation_deg": 13.5
+   },
+   {
+    "i": 6,
+    "path": "assets/bench/view/v06.webp",
+    "azimuth_deg": 75.0,
+    "elevation_deg": 35.8
+   },
+   {
+    "i": 7,
+    "path": "assets/bench/view/v07.webp",
+    "azimuth_deg": 78.1,
+    "elevation_deg": 12.8
+   },
+   {
+    "i": 8,
+    "path": "assets/bench/view/v08.webp",
+    "azimuth_deg": 88.1,
+    "elevation_deg": 66.0
+   },
+   {
+    "i": 9,
+    "path": "assets/bench/view/v09.webp",
+    "azimuth_deg": 103.6,
+    "elevation_deg": 14.1
+   },
+   {
+    "i": 10,
+    "path": "assets/bench/view/v10.webp",
+    "azimuth_deg": 113.1,
+    "elevation_deg": 37.8
+   },
+   {
+    "i": 11,
+    "path": "assets/bench/view/v11.webp",
+    "azimuth_deg": 131.0,
+    "elevation_deg": 14.6
+   },
+   {
+    "i": 12,
+    "path": "assets/bench/view/v12.webp",
+    "azimuth_deg": 148.6,
+    "elevation_deg": 66.6
+   },
+   {
+    "i": 13,
+    "path": "assets/bench/view/v13.webp",
+    "azimuth_deg": 158.7,
+    "elevation_deg": 45.8
+   },
+   {
+    "i": 14,
+    "path": "assets/bench/view/v14.webp",
+    "azimuth_deg": 165.1,
+    "elevation_deg": 20.3
+   },
+   {
+    "i": 15,
+    "path": "assets/bench/view/v15.webp",
+    "azimuth_deg": 182.2,
+    "elevation_deg": 14.0
+   },
+   {
+    "i": 16,
+    "path": "assets/bench/view/v16.webp",
+    "azimuth_deg": 205.0,
+    "elevation_deg": 46.6
+   },
+   {
+    "i": 17,
+    "path": "assets/bench/view/v17.webp",
+    "azimuth_deg": 215.3,
+    "elevation_deg": 21.2
+   },
+   {
+    "i": 18,
+    "path": "assets/bench/view/v18.webp",
+    "azimuth_deg": 241.7,
+    "elevation_deg": 17.2
+   },
+   {
+    "i": 19,
+    "path": "assets/bench/view/v19.webp",
+    "azimuth_deg": 243.9,
+    "elevation_deg": 77.9
+   },
+   {
+    "i": 20,
+    "path": "assets/bench/view/v20.webp",
+    "azimuth_deg": 251.7,
+    "elevation_deg": 56.8
+   },
+   {
+    "i": 21,
+    "path": "assets/bench/view/v21.webp",
+    "azimuth_deg": 290.5,
+    "elevation_deg": 20.0
+   },
+   {
+    "i": 22,
+    "path": "assets/bench/view/v22.webp",
+    "azimuth_deg": 308.5,
+    "elevation_deg": 51.9
+   },
+   {
+    "i": 23,
+    "path": "assets/bench/view/v23.webp",
+    "azimuth_deg": 310.4,
+    "elevation_deg": 22.6
+   }
+  ]
+ },
+ "object_pool": [
+  {
+   "img": "assets/bench/pool/o00.webp",
+   "cfg": "cfg_a"
+  },
+  {
+   "img": "assets/bench/pool/o01.webp",
+   "cfg": "cfg_a"
+  },
+  {
+   "img": "assets/bench/pool/o02.webp",
+   "cfg": "cfg_a"
+  },
+  {
+   "img": "assets/bench/pool/o03.webp",
+   "cfg": "cfg_a"
+  },
+  {
+   "img": "assets/bench/pool/o04.webp",
+   "cfg": "cfg_a"
+  },
+  {
+   "img": "assets/bench/pool/o05.webp",
+   "cfg": "cfg_a"
+  },
+  {
+   "img": "assets/bench/pool/o06.webp",
+   "cfg": "cfg_a"
+  },
+  {
+   "img": "assets/bench/pool/o07.webp",
+   "cfg": "cfg_a"
+  },
+  {
+   "img": "assets/bench/pool/o08.webp",
+   "cfg": "cfg_b"
+  },
+  {
+   "img": "assets/bench/pool/o09.webp",
+   "cfg": "cfg_b"
+  },
+  {
+   "img": "assets/bench/pool/o10.webp",
+   "cfg": "cfg_b"
+  },
+  {
+   "img": "assets/bench/pool/o11.webp",
+   "cfg": "cfg_b"
+  },
+  {
+   "img": "assets/bench/pool/o12.webp",
+   "cfg": "cfg_b"
+  },
+  {
+   "img": "assets/bench/pool/o13.webp",
+   "cfg": "cfg_b"
+  },
+  {
+   "img": "assets/bench/pool/o14.webp",
+   "cfg": "cfg_b"
+  },
+  {
+   "img": "assets/bench/pool/o15.webp",
+   "cfg": "cfg_b"
+  },
+  {
+   "img": "assets/bench/pool/o16.webp",
+   "cfg": "cfg_c"
+  },
+  {
+   "img": "assets/bench/pool/o17.webp",
+   "cfg": "cfg_c"
+  },
+  {
+   "img": "assets/bench/pool/o18.webp",
+   "cfg": "cfg_c"
+  },
+  {
+   "img": "assets/bench/pool/o19.webp",
+   "cfg": "cfg_c"
+  },
+  {
+   "img": "assets/bench/pool/o20.webp",
+   "cfg": "cfg_c"
+  },
+  {
+   "img": "assets/bench/pool/o21.webp",
+   "cfg": "cfg_c"
+  },
+  {
+   "img": "assets/bench/pool/o22.webp",
+   "cfg": "cfg_c"
+  },
+  {
+   "img": "assets/bench/pool/o23.webp",
+   "cfg": "cfg_c"
+  },
+  {
+   "img": "assets/bench/pool/o24.webp",
+   "cfg": "cfg_d"
+  },
+  {
+   "img": "assets/bench/pool/o25.webp",
+   "cfg": "cfg_d"
+  },
+  {
+   "img": "assets/bench/pool/o26.webp",
+   "cfg": "cfg_d"
+  },
+  {
+   "img": "assets/bench/pool/o27.webp",
+   "cfg": "cfg_d"
+  },
+  {
+   "img": "assets/bench/pool/o28.webp",
+   "cfg": "cfg_d"
+  },
+  {
+   "img": "assets/bench/pool/o29.webp",
+   "cfg": "cfg_d"
+  },
+  {
+   "img": "assets/bench/pool/o30.webp",
+   "cfg": "cfg_d"
+  },
+  {
+   "img": "assets/bench/pool/o31.webp",
+   "cfg": "cfg_d"
+  },
+  {
+   "img": "assets/bench/pool/o32.webp",
+   "cfg": "cfg_e"
+  },
+  {
+   "img": "assets/bench/pool/o33.webp",
+   "cfg": "cfg_e"
+  },
+  {
+   "img": "assets/bench/pool/o34.webp",
+   "cfg": "cfg_e"
+  },
+  {
+   "img": "assets/bench/pool/o35.webp",
+   "cfg": "cfg_e"
+  },
+  {
+   "img": "assets/bench/pool/o36.webp",
+   "cfg": "cfg_e"
+  },
+  {
+   "img": "assets/bench/pool/o37.webp",
+   "cfg": "cfg_e"
+  },
+  {
+   "img": "assets/bench/pool/o38.webp",
+   "cfg": "cfg_e"
+  },
+  {
+   "img": "assets/bench/pool/o39.webp",
+   "cfg": "cfg_e"
+  },
+  {
+   "img": "assets/bench/pool/o40.webp",
+   "cfg": "cfg_f"
+  },
+  {
+   "img": "assets/bench/pool/o41.webp",
+   "cfg": "cfg_f"
+  },
+  {
+   "img": "assets/bench/pool/o42.webp",
+   "cfg": "cfg_f"
+  },
+  {
+   "img": "assets/bench/pool/o43.webp",
+   "cfg": "cfg_f"
+  },
+  {
+   "img": "assets/bench/pool/o44.webp",
+   "cfg": "cfg_f"
+  },
+  {
+   "img": "assets/bench/pool/o45.webp",
+   "cfg": "cfg_f"
+  },
+  {
+   "img": "assets/bench/pool/o46.webp",
+   "cfg": "cfg_f"
+  },
+  {
+   "img": "assets/bench/pool/o47.webp",
+   "cfg": "cfg_f"
+  }
+ ]
+}

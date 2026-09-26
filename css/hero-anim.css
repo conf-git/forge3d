@@ -1,0 +1,57 @@
+/* hero-anim.css : hero canvas + method diagram states. Uses tokens from css/tokens.css only. */
+
+/* ---------- section: hero ---------- */
+.forge-hero-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+}
+.forge-hero-figure {
+  position: relative;
+  margin: 0;
+}
+.forge-hero-caption {
+  position: absolute;
+  right: var(--s4, 16px);
+  bottom: var(--s3, 12px);
+  margin: 0;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: var(--muted, #9AA5B1);
+  text-align: right;
+  pointer-events: none;
+}
+
+/* ---------- section: method ----------
+   The page sets svg[data-layer] to geometry | appearance | attention | all
+   (or calls ForgeMethod.setLayer(svg, name), which also toggles .is-active / .is-dim
+   on every [data-layer] member). Both routes give the same look. */
+.method-svg { display: block; width: 100%; height: auto; }
+.method-svg .layer { opacity: 1; }
+
+/* attribute route */
+.method-svg[data-layer="geometry"]   .layer:not(.layer-geometry):not(.layer-base),
+.method-svg[data-layer="appearance"] .layer:not(.layer-appearance):not(.layer-base),
+.method-svg[data-layer="attention"]  .layer:not(.layer-attention):not(.layer-base) { opacity: .22; }
+.method-svg[data-layer="geometry"]   .layer-base,
+.method-svg[data-layer="appearance"] .layer-base,
+.method-svg[data-layer="attention"]  .layer-base { opacity: .55; }
+
+/* class route (member elements carry their own data-layer value) */
+.method-svg .layer.is-dim { opacity: .22; }
+.method-svg .layer-base.is-dim { opacity: .55; }
+.method-svg .layer.is-active { opacity: 1; }
+.method-svg .layer.is-active .m-node { stroke-width: 2.4; }
+.method-svg .layer.is-active .m-line { stroke-width: 2.2; }
+
+@media (prefers-reduced-motion: reduce) {
+  .method-svg .layer { transition: none; }
+}
+@media (max-width: 720px) {
+  /* the diagram is wide; let it scroll horizontally inside its own frame instead of shrinking text to nothing */
+  .method-svg-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .method-svg-scroll .method-svg { min-width: 860px; }
+}

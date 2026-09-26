@@ -1,0 +1,10 @@
+/* Wordmarks. Requires tokens.css. Cap height matched between weights. */
+.wm,.wm-bench{font-family:var(--font-display,'Space Grotesk',system-ui,sans-serif);font-weight:700;letter-spacing:.04em;color:var(--text,#EDF1F4);text-transform:none;line-height:1;white-space:nowrap;display:inline-block}
+.wm .wm-3d{color:var(--ember,#FF6B4A)}
+.wm-bench .wm-3d{color:var(--ember,#FF6B4A)}
+.wm-bench .wm-b{font-weight:400;color:var(--teal,#4FB3BF);letter-spacing:.04em;margin-left:.02em}
+.wm-mark{display:inline-block;height:1.15em;width:1.15em;vertical-align:-.2em;margin-right:.4em}
+.wm-lockup{display:inline-flex;align-items:center;gap:.45em}
+.wm-lockup img,.wm-lockup svg{height:1.6em;width:1.6em}
+/* usage: <span class="wm">FORGE<span class="wm-3d">3D</span></span>
+          <span class="wm-bench">FORGE<span class="wm-3d">3D</span><span class="wm-b">Bench</span></span> */

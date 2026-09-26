@@ -1,0 +1,389 @@
+{
+ "columns": [
+  "Input",
+  "GT",
+  "ReconViaGen",
+  "Amodal3R",
+  "Hunyuan3D-2mv",
+  "Cupid (our multi-view adaptation)",
+  "Ours"
+ ],
+ "rows": [
+  {
+   "id": "g01",
+   "tags": [
+    "Factory",
+    "Ground"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g01_input.webp",
+    "GT": "assets/gallery/g01_gt.webp",
+    "ReconViaGen": "assets/gallery/g01_rvg.webp",
+    "Amodal3R": "assets/gallery/g01_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g01_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g01_cupid.webp",
+    "Ours": "assets/gallery/g01_ours.webp"
+   },
+   "failure_of": [
+    "Amodal3R",
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Amodal3R, Cupid (our multi-view adaptation)."
+  },
+  {
+   "id": "g02",
+   "tags": [
+    "Factory",
+    "Ground"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g02_input.webp",
+    "GT": "assets/gallery/g02_gt.webp",
+    "ReconViaGen": "assets/gallery/g02_rvg.webp",
+    "Amodal3R": "assets/gallery/g02_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g02_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g02_cupid.webp",
+    "Ours": "assets/gallery/g02_ours.webp"
+   },
+   "failure_of": [
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Cupid (our multi-view adaptation)."
+  },
+  {
+   "id": "g03",
+   "tags": [
+    "Factory",
+    "Ground"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g03_input.webp",
+    "GT": "assets/gallery/g03_gt.webp",
+    "ReconViaGen": "assets/gallery/g03_rvg.webp",
+    "Amodal3R": "assets/gallery/g03_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g03_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g03_cupid.webp",
+    "Ours": "assets/gallery/g03_ours.webp"
+   },
+   "failure_of": [],
+   "note": null
+  },
+  {
+   "id": "g04",
+   "tags": [
+    "Factory",
+    "Robot Table"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g04_input.webp",
+    "GT": "assets/gallery/g04_gt.webp",
+    "ReconViaGen": "assets/gallery/g04_rvg.webp",
+    "Amodal3R": "assets/gallery/g04_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g04_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g04_cupid.webp",
+    "Ours": "assets/gallery/g04_ours.webp"
+   },
+   "failure_of": [
+    "Ours",
+    "ReconViaGen"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Ours, ReconViaGen."
+  },
+  {
+   "id": "g05",
+   "tags": [
+    "Factory",
+    "Robot Table"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g05_input.webp",
+    "GT": "assets/gallery/g05_gt.webp",
+    "ReconViaGen": "assets/gallery/g05_rvg.webp",
+    "Amodal3R": "assets/gallery/g05_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g05_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g05_cupid.webp",
+    "Ours": "assets/gallery/g05_ours.webp"
+   },
+   "failure_of": [
+    "ReconViaGen",
+    "Hunyuan3D-2mv",
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): ReconViaGen, Hunyuan3D-2mv, Cupid (our multi-view adaptation)."
+  },
+  {
+   "id": "g06",
+   "tags": [
+    "Factory",
+    "Robot Table"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g06_input.webp",
+    "GT": "assets/gallery/g06_gt.webp",
+    "ReconViaGen": "assets/gallery/g06_rvg.webp",
+    "Amodal3R": "assets/gallery/g06_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g06_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g06_cupid.webp",
+    "Ours": "assets/gallery/g06_ours.webp"
+   },
+   "failure_of": [],
+   "note": null
+  },
+  {
+   "id": "g07",
+   "tags": [
+    "Factory",
+    "Table"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g07_input.webp",
+    "GT": "assets/gallery/g07_gt.webp",
+    "ReconViaGen": "assets/gallery/g07_rvg.webp",
+    "Amodal3R": "assets/gallery/g07_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g07_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g07_cupid.webp",
+    "Ours": "assets/gallery/g07_ours.webp"
+   },
+   "failure_of": [
+    "Amodal3R",
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Amodal3R, Cupid (our multi-view adaptation)."
+  },
+  {
+   "id": "g08",
+   "tags": [
+    "Factory",
+    "Table"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g08_input.webp",
+    "GT": "assets/gallery/g08_gt.webp",
+    "ReconViaGen": "assets/gallery/g08_rvg.webp",
+    "Amodal3R": "assets/gallery/g08_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g08_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g08_cupid.webp",
+    "Ours": "assets/gallery/g08_ours.webp"
+   },
+   "failure_of": [
+    "Hunyuan3D-2mv"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Hunyuan3D-2mv."
+  },
+  {
+   "id": "g09",
+   "tags": [
+    "Factory",
+    "Table"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g09_input.webp",
+    "GT": "assets/gallery/g09_gt.webp",
+    "ReconViaGen": "assets/gallery/g09_rvg.webp",
+    "Amodal3R": "assets/gallery/g09_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g09_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g09_cupid.webp",
+    "Ours": "assets/gallery/g09_ours.webp"
+   },
+   "failure_of": [
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Cupid (our multi-view adaptation)."
+  },
+  {
+   "id": "g10",
+   "tags": [
+    "Park",
+    "Ground"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g10_input.webp",
+    "GT": "assets/gallery/g10_gt.webp",
+    "ReconViaGen": "assets/gallery/g10_rvg.webp",
+    "Amodal3R": "assets/gallery/g10_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g10_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g10_cupid.webp",
+    "Ours": "assets/gallery/g10_ours.webp"
+   },
+   "failure_of": [
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Cupid (our multi-view adaptation)."
+  },
+  {
+   "id": "g11",
+   "tags": [
+    "Park",
+    "Ground"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g11_input.webp",
+    "GT": "assets/gallery/g11_gt.webp",
+    "ReconViaGen": "assets/gallery/g11_rvg.webp",
+    "Amodal3R": "assets/gallery/g11_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g11_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g11_cupid.webp",
+    "Ours": "assets/gallery/g11_ours.webp"
+   },
+   "failure_of": [],
+   "note": null
+  },
+  {
+   "id": "g12",
+   "tags": [
+    "Park",
+    "Ground"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g12_input.webp",
+    "GT": "assets/gallery/g12_gt.webp",
+    "ReconViaGen": "assets/gallery/g12_rvg.webp",
+    "Amodal3R": "assets/gallery/g12_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g12_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g12_cupid.webp",
+    "Ours": "assets/gallery/g12_ours.webp"
+   },
+   "failure_of": [
+    "Ours",
+    "Amodal3R",
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Ours, Amodal3R, Cupid (our multi-view adaptation)."
+  },
+  {
+   "id": "g13",
+   "tags": [
+    "Park",
+    "Robot Table"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g13_input.webp",
+    "GT": "assets/gallery/g13_gt.webp",
+    "ReconViaGen": "assets/gallery/g13_rvg.webp",
+    "Amodal3R": "assets/gallery/g13_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g13_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g13_cupid.webp",
+    "Ours": "assets/gallery/g13_ours.webp"
+   },
+   "failure_of": [
+    "ReconViaGen",
+    "Amodal3R",
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): ReconViaGen, Amodal3R, Cupid (our multi-view adaptation)."
+  },
+  {
+   "id": "g14",
+   "tags": [
+    "Park",
+    "Robot Table"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g14_input.webp",
+    "GT": "assets/gallery/g14_gt.webp",
+    "ReconViaGen": "assets/gallery/g14_rvg.webp",
+    "Amodal3R": "assets/gallery/g14_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g14_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g14_cupid.webp",
+    "Ours": "assets/gallery/g14_ours.webp"
+   },
+   "failure_of": [
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Cupid (our multi-view adaptation)."
+  },
+  {
+   "id": "g15",
+   "tags": [
+    "Park",
+    "Robot Table"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g15_input.webp",
+    "GT": "assets/gallery/g15_gt.webp",
+    "ReconViaGen": "assets/gallery/g15_rvg.webp",
+    "Amodal3R": "assets/gallery/g15_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g15_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g15_cupid.webp",
+    "Ours": "assets/gallery/g15_ours.webp"
+   },
+   "failure_of": [
+    "Amodal3R",
+    "Hunyuan3D-2mv",
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Amodal3R, Hunyuan3D-2mv, Cupid (our multi-view adaptation)."
+  },
+  {
+   "id": "g16",
+   "tags": [
+    "Park",
+    "Table"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g16_input.webp",
+    "GT": "assets/gallery/g16_gt.webp",
+    "ReconViaGen": "assets/gallery/g16_rvg.webp",
+    "Amodal3R": "assets/gallery/g16_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g16_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g16_cupid.webp",
+    "Ours": "assets/gallery/g16_ours.webp"
+   },
+   "failure_of": [
+    "Amodal3R",
+    "Hunyuan3D-2mv",
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Amodal3R, Hunyuan3D-2mv, Cupid (our multi-view adaptation)."
+  },
+  {
+   "id": "g17",
+   "tags": [
+    "Park",
+    "Table"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g17_input.webp",
+    "GT": "assets/gallery/g17_gt.webp",
+    "ReconViaGen": "assets/gallery/g17_rvg.webp",
+    "Amodal3R": "assets/gallery/g17_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g17_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g17_cupid.webp",
+    "Ours": "assets/gallery/g17_ours.webp"
+   },
+   "failure_of": [
+    "Amodal3R"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Amodal3R."
+  },
+  {
+   "id": "g18",
+   "tags": [
+    "Park",
+    "Table"
+   ],
+   "cells": {
+    "Input": "assets/gallery/g18_input.webp",
+    "GT": "assets/gallery/g18_gt.webp",
+    "ReconViaGen": "assets/gallery/g18_rvg.webp",
+    "Amodal3R": "assets/gallery/g18_amodal3r.webp",
+    "Hunyuan3D-2mv": "assets/gallery/g18_hy3d2mv.webp",
+    "Cupid (our multi-view adaptation)": "assets/gallery/g18_cupid.webp",
+    "Ours": "assets/gallery/g18_ours.webp"
+   },
+   "failure_of": [
+    "Ours",
+    "ReconViaGen",
+    "Hunyuan3D-2mv",
+    "Cupid (our multi-view adaptation)"
+   ],
+   "note": "Flagged by the failure rule (CD-L1 above 0.03 or F@0.01 below 0.25): Ours, ReconViaGen, Hunyuan3D-2mv, Cupid (our multi-view adaptation)."
+  }
+ ],
+ "notes": [
+  "Selected examples: 3 objects per scene configuration drawn with a fixed seed, then swapped within the same configuration to include failure cases; not an exhaustive or uncurated set.",
+  "Pixal3D is omitted: its FORGE3DBench rows are still pending.",
+  "The Cupid column comes from our own multi-view adaptation of a single-view release; it fails on many objects and should not be read as the original method.",
+  "Failures of every method, including ours, are marked. The failure rule is a display threshold, not a benchmark metric."
+ ]
+}

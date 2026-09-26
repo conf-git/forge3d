@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FORGE3D: Faithful Observation-Grounded 3D Mesh Generation</title>
+<meta name="description" content="Anonymous project page for FORGE3D, observation-faithful 3D mesh generation, and FORGE3DBench, a benchmark for observation faithfulness. Under double-blind review.">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#07090C">
+<meta name="color-scheme" content="dark">
+<!-- CSP (meta form, so it travels with the files). Notes: no inline script or style anywhere; blob:/worker/wasm are
+     allowed only for the vendored mesh viewer and its decoders; frame-ancestors cannot be set from a meta tag. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'wasm-unsafe-eval' blob:; worker-src 'self' blob:; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self' blob:; style-src 'self' 'sha256-F7kvx28zBT3UUQL/hTOYst+55RSmqyCY3muSCYmt6A4='; font-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FORGE3D: Faithful Observation-Grounded 3D Mesh Generation">
+<meta property="og:description" content="Anonymous project page for a paper under double-blind review.">
+<meta property="og:image" content="assets/brand/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+<link rel="preload" href="fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/space-grotesk-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/brand.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/hero-anim.css">
+<link rel="stylesheet" href="css/polish.css">
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topnav" data-nav aria-label="Site">
+  <div class="topnav-inner">
+    <a class="topnav-brand wm" href="#top" aria-label="FORGE3D, back to top">FORGE<span class="wm-3d">3D</span></a>
+    <nav class="topnav-links" aria-label="Sections">
+      <a href="#proof" data-nav-link="proof">Proof</a>
+      <a href="#method" data-nav-link="method">Method</a>
+      <a href="#viewer" data-nav-link="viewer">Inspect</a>
+      <a href="#gallery" data-nav-link="gallery">Compare</a>
+      <a href="#results" data-nav-link="results">Results</a>
+      <a href="#bench" data-nav-link="bench" class="is-bench">FORGE3DBench</a>
+      <a href="#notes" data-nav-link="notes">Notes</a>
+    </nav>
+    <span class="topnav-soon" title="Paper: coming soon">Paper <span class="soon-chip">Soon</span></span>
+    <button type="button" class="topnav-menu-btn" data-nav-open aria-haspopup="dialog" aria-expanded="false" aria-controls="menu-dialog" aria-label="Open section menu">
+      <span class="bars" aria-hidden="true"></span><span class="lbl">Menu</span>
+    </button>
+  </div>
+</header>
+<dialog class="menu-dialog" id="menu-dialog" data-nav-dialog aria-label="Sections">
+  <div class="menu-close-row"><button type="button" class="menu-close" data-nav-close>Close</button></div>
+  <nav class="menu-links" aria-label="Sections (menu)"></nav>
+</dialog>
+<main id="main">
+<!-- 01_hero.html -->
+<section class="hero" id="top" data-section="hero" aria-labelledby="hero-title">
+  <figure class="forge-hero-figure hero-bg" data-hero-bg aria-hidden="true">
+    <canvas class="forge-hero-canvas" id="forge-hero-canvas" data-hero-canvas></canvas>
+  </figure>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-inner container">
+    <div class="hero-copy">
+      <p class="badge"><span class="badge-dot" aria-hidden="true"></span>Under double-blind review</p>
+      <h1 id="hero-title" class="wm hero-wm" aria-label="FORGE3D">FORGE<span class="wm-3d">3D</span></h1>
+      <p class="hero-tag">Start generation from evidence, not noise</p>
+      <p class="hero-sub">FORGE3D writes the observed depth and image features into a pretrained 3D generator before sampling begins, so the mesh follows the input views. Hidden regions are still completed by the generator.</p>
+      <div class="hero-ctas" data-hero-ctas>
+        <span class="btn btn-primary is-soon" title="Paper: coming soon">Paper <span class="soon-chip">Coming soon</span></span>
+        <a class="btn btn-bench" href="#bench" data-goto="bench">FORGE3DBench</a>
+        <a class="btn btn-ghost" href="#bibtex" data-goto="bibtex">BibTeX</a>
+        <span class="btn btn-ghost is-soon" title="Code and data: coming soon">Code + data <span class="soon-chip">Soon</span></span>
+      </div>
+      <p class="hero-anon">Anonymous authors</p>
+    </div>
+    <div class="hero-card-wrap" data-hero-card>
+      <div class="vf hero-card">
+        <div class="hero-card-body" data-hero-card-body>
+          <div class="static-solo"><img src="assets/proof/p06_input.webp" width="1200" height="1200" alt="Input view (rendered benchmark frame)" decoding="async"><span class="cmp-tag cmp-tag-l">Input view</span></div>
+        </div>
+      </div>
+      <p class="prov" data-hero-prov>Same calibrated camera. Input view (an enlarged crop of a rendered benchmark frame) on the left, FORGE3D render on the right. Drag to compare.</p>
+      <p class="hero-illus forge-hero-caption" data-hero-illus hidden>The faint background lines are an illustrative animation, not model output.</p>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#proofstrip" aria-label="Scroll to the facts"><span aria-hidden="true"></span></a>
+</section>
+<!-- 02_proofstrip.html -->
+<section class="proofstrip" id="proofstrip" data-section="proofstrip" aria-label="Frozen facts" >
+  <div class="container">
+    <ul class="stats" data-stats>
+      <li class="stat" data-stat="fb150_4v_cd"><span class="stat-l">FORGE3DBench-150, 4 views: Chamfer-L1, ours vs best baseline (lower is better)</span><span class="stat-v" data-count><span class="v-ours">0.0120</span><span class="v-vs">vs</span><span class="v-base">0.0221</span></span><span class="stat-d">Chamfer-L1 in unit-cube units; best baseline for this metric: Hunyuan3D-2mv; 45% better; n = 144 objects, 4 views.</span></li>
+<li class="stat" data-stat="fb150_4v_f01"><span class="stat-l">FORGE3DBench-150, 4 views: F@0.01, ours vs best baseline (higher is better)</span><span class="stat-v" data-count><span class="v-ours">0.737</span><span class="v-vs">vs</span><span class="v-base">0.415</span></span><span class="stat-d">F-score at 0.01; best baseline for this metric: ReconViaGen; 77% better; n = 144 objects, 4 views.</span></li>
+<li class="stat" data-stat="fb150_1v_cd"><span class="stat-l">FORGE3DBench-150, 1 view: Chamfer-L1, ours vs best baseline (lower is better)</span><span class="stat-v" data-count><span class="v-ours">0.0286</span><span class="v-vs">vs</span><span class="v-base">0.0283</span></span><span class="stat-d">Chamfer-L1 in unit-cube units; at one view the two are tied or ours is behind; best baseline for this metric: Hunyuan3D-2mv; 1% worse; n = 144 objects, 1 view.</span></li>
+    </ul>
+    <p class="stats-note">Only final numbers are shown. Every value comes from the results file behind the tables below. FORGE3D also uses depth that the baselines do not receive; at one view it is tied or behind on Chamfer-L1.</p>
+  </div>
+</section>
+<!-- 03_tldr.html -->
+<section class="sec tldr" id="tldr" data-section="tldr" aria-labelledby="tldr-title">
+  <div class="ray" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow">Summary</p>
+    <div class="tldr-grid">
+      <div class="tldr-main">
+        <h2 id="tldr-title" class="sec-title">TL;DR</h2>
+        <ul class="tldr-list">
+          <li>Image-conditioned 3D generators often return a plausible object whose visible surface drifts from the input views. The views act only as a hint.</li>
+<li>FORGE3D starts generation from the observation instead: depth seeds the sparse structure and image features seed the appearance latents, an idea we call latent forcing.</li>
+<li>Forcing alone improves geometry without extra training, and fine-tuning with correspondence-aware multi-view attention improves appearance. These are claims of the paper; the ablation is not shown on this page.</li>
+<li>FORGE3DBench provides cluttered, occluded, multi-view scenes with ground-truth meshes to test observation faithfulness.</li>
+        </ul>
+      </div>
+      <aside class="abstract-card" aria-labelledby="abs-title">
+        <h3 id="abs-title" class="abs-h">Abstract <span class="soon-chip">draft placeholder</span></h3>
+        <p class="abs-text" id="abs-text" data-abs>Recent 3D mesh generators produce visually compelling assets, yet faithfully reconstructing specific objects from real-world observations remains challenging. A practical mesh generation framework must jointly preserve observed 3D geometry and pixel-aligned appearance from one or more views while plausibly completing unseen regions. However, these observations often serve only as coarse conditioning signals, allowing generated geometry and appearance to deviate from the input. Moreover, existing 3D mesh benchmarks provide limited coverage of realistic scenes and challenging observation conditions needed to assess reconstruction faithfulness in real-world scenarios. To address these gaps, we introduce FORGE3D (Faithful Observation-Grounded 3D Mesh Generation), an observation-faithful mesh generation pipeline, and FORGE3DBench, a benchmark for evaluating observation faithfulness under realistic multi-view conditions. FORGE3D directly encodes geometric and visual observations into the generative latent space through geometry and appearance latent forcing, initializing generation from observed evidence. Applied to a pretrained generator, latent forcing already improves geometric fidelity without additional training, and fine-tuning with correspondence-aware multi-view attention further improves appearance. FORGE3DBench features more than 300 unique assets across 120 simulated scenes (20 in each of six capture configurations) with 24 camera viewpoints, encompassing varied object placements, lighting conditions, and occlusions. On the benchmarks shown on this page, FORGE3D is ahead of the four shown baselines at four views and mixed at one view; FORGE3D also uses observed depth that the baselines do not receive.</p>
+      </aside>
+    </div>
+    <ul class="chip-cards">
+      <li class="chip-card"><span class="chip-num" aria-hidden="true">01</span><h3>Latent forcing</h3><p>Observed geometry and appearance are encoded into the generator&#x27;s latent space and used as the starting point of generation, so unseen regions are the only part left to the prior.</p></li>
+<li class="chip-card"><span class="chip-num" aria-hidden="true">02</span><h3>Correspondence-aware multi-view attention</h3><p>Each 3D voxel attends mostly to the image patches it projects into across views, so several views can be fused without changing the one-view behavior.</p></li>
+<li class="chip-card"><span class="chip-num" aria-hidden="true">03</span><h3>FORGE3DBench</h3><p>A photorealistic benchmark of multi-object scenes with calibrated views, metric depth, modal and amodal masks, and ground-truth meshes.</p></li>
+    </ul>
+  </div>
+</section>
+<!-- 04_proof.html -->
+<section class="sec proof" id="proof" data-section="proof" aria-labelledby="proof-title">
+  <div class="ray" aria-hidden="true"></div>
+  <div class="container">
+    <div class="proof-head">
+      <div>
+        <p class="eyebrow">Proof</p>
+        <h2 id="proof-title" class="sec-title">Same camera, side by side</h2>
+      </div>
+      <div class="proof-head-r">
+        <p class="sec-lead">Every pair is rendered from the same calibrated camera as the input view. Drag the divider, use the arrow keys, or overlay the render.</p>
+        <p class="sel-note"><span class="tag-selected">Selected examples</span> <span data-sel-rule>Chosen to show the comparison clearly, mostly where FORGE3D is ahead; not a random draw. The rule is under Selection, and the gallery below shows failures of every method.</span></p>
+      </div>
+    </div>
+    <div class="proof-app" data-proof-app>
+      <noscript><div class="static-pair"><figure><img src="assets/proof/p06_input.webp" width="1200" height="1200" alt="Input view (rendered benchmark frame)" loading="lazy" decoding="async"><figcaption>Input view</figcaption></figure><figure><img src="assets/proof/p06_ours.webp" width="1200" height="1200" alt="FORGE3D render from the same camera" loading="lazy" decoding="async"><figcaption>FORGE3D render</figcaption></figure></div><p class="prov">Interactive comparison needs JavaScript. Static pair shown.</p></noscript>
+    </div>
+    <div class="drift" data-drift hidden>
+      <h3 class="drift-title">Plausible is not faithful</h3>
+      <p class="drift-lead">These baselines return a believable object whose visible surface still drifts from the input view. Left of the divider is the input, right is the baseline render from the same camera.</p>
+      <div class="drift-row" data-drift-row></div>
+    </div>
+  </div>
+</section>
+<!-- 05_method.html -->
+<section class="f2-sec f2-method" id="method" data-section="method" aria-labelledby="method-h">
+  <div class="f2-wrap">
+    <header class="f2-head">
+      <p class="f2-eyebrow">Method</p>
+      <h2 class="f2-h2" id="method-h">Write the evidence into the generator</h2>
+      <p class="f2-lede">A two-stage latent generator normally starts each stage from noise. FORGE3D replaces that noise with the observation wherever a camera saw the object, and leaves only the unseen part to the generator. Pick a step to see where it acts.</p>
+    </header>
+
+    <div class="mt-tabs" role="tablist" aria-label="Method components" data-tablist>
+      <button type="button" role="tab" class="mt-tab" id="mt-tab-geometry" data-key="geometry" aria-controls="mt-panel" aria-selected="true" tabindex="0"><span class="mt-num" aria-hidden="true">1</span><span class="mt-label">Geometry latent forcing</span></button>
+      <button type="button" role="tab" class="mt-tab" id="mt-tab-appearance" data-key="appearance" aria-controls="mt-panel" aria-selected="false" tabindex="-1"><span class="mt-num" aria-hidden="true">2</span><span class="mt-label">Appearance latent forcing</span></button>
+      <button type="button" role="tab" class="mt-tab" id="mt-tab-attention" data-key="attention" aria-controls="mt-panel" aria-selected="false" tabindex="-1"><span class="mt-num" aria-hidden="true">3</span><span class="mt-label">Correspondence-aware multi-view attention</span></button>
+    </div>
+
+    <div class="mt-body">
+      <p class="swipe-hint" aria-hidden="true">Swipe sideways to see the whole diagram</p>
+      <figure class="f2-frame mt-fig">
+        <div class="mt-svg" data-svg-host data-state="loading">
+          <p class="mt-svg-msg" data-svg-msg>Loading diagram</p>
+        </div>
+        <figcaption class="f2-prov">Pipeline diagram, redrawn for this page. Highlighted layers belong to the selected step.</figcaption>
+      </figure>
+
+      <div class="mt-panel" id="mt-panel" role="tabpanel" aria-labelledby="mt-tab-geometry" tabindex="0" data-panel>
+        <h3 class="mt-title" data-title>Geometry latent forcing</h3>
+        <div class="mt-text" data-body></div>
+        <p class="mt-caption" data-caption></p>
+      </div>
+    </div>
+    <noscript><p class="f2-noscript">The method text and diagram load with JavaScript. The paper describes the same three steps.</p></noscript>
+  </div>
+</section>
+<!-- 06_viewer.html -->
+<section class="f2-sec f2-viewer" id="viewer" data-section="viewer" aria-labelledby="viewer-h">
+  <div class="f2-wrap">
+    <header class="f2-head">
+      <p class="f2-eyebrow">Inspect the mesh</p>
+      <h2 class="f2-h2" id="viewer-h">Orbit it.</h2>
+      <p class="f2-selected"><span class="f2-badge">Selected examples</span> <span class="f2-selnote">Six objects picked where ours has the lower Chamfer-L1, so this is the favourable side of the distribution: on 36 of 144 objects at four views, ours does not have the lowest Chamfer-L1.</span></p>
+      <p class="f2-lede">Drag to rotate. Switch between our mesh, the ground truth and the best baseline for that object; the camera stays where you left it, so you can check the same spot on each.</p>
+    </header>
+
+    <div class="vw-layout">
+      <div class="vw-main">
+        <figure class="f2-frame vw-frame">
+          <div class="vw-stage" data-stage>
+            <img class="vw-poster" alt="" width="960" height="540" decoding="async" data-poster>
+            <div class="vw-overlay" data-overlay>
+              <button type="button" class="f2-btn f2-btn-primary vw-load" data-load>Load 3D viewer <span data-load-size></span></button>
+            </div>
+            <div class="vw-progress" data-progress hidden><span class="vw-bar-fill" data-progress-fill></span><span class="vw-progress-label" data-progress-label>Loading</span></div>
+            <p class="vw-fallback" data-fallback hidden></p>
+          </div>
+          <figcaption class="f2-prov vw-prov" data-prov aria-live="polite">Select an object below.</figcaption>
+        </figure>
+
+        <div class="vw-bar">
+          <div class="vw-variants" role="radiogroup" aria-label="Mesh variant" data-variants></div>
+          <div class="vw-tools" data-tools>
+            <label class="vw-check"><input type="checkbox" data-rot> <span>Auto-rotate</span></label>
+            <button type="button" class="f2-btn" data-reset>Reset view</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="vw-side" aria-label="Objects">
+        <p class="f2-mini">Objects</p>
+        <div class="vw-rail" role="group" aria-label="Choose an object" data-rail></div>
+        <div class="vw-note">
+          <p><strong>How to read this.</strong> Meshes are shown as unlit albedo: the colour the model produced, with no shading or relighting, so colour differences come from the models and not the renderer.</p>
+          <p>All variants of an object share one frame. Baselines were aligned to the ground truth before display; ours was not re-aligned. Meshes are simplified and compressed for the web.</p>
+          <p class="vw-hint">Ctrl or Cmd + scroll, or pinch, to zoom.</p>
+        </div>
+      </aside>
+    </div>
+    <noscript><p class="f2-noscript">The 3D viewer needs JavaScript and WebGL.</p></noscript>
+  </div>
+</section>
+<!-- 07_gallery.html -->
+<section class="f2-sec f2-gallery" id="gallery" data-section="gallery" aria-labelledby="gallery-h">
+  <a id="compare" class="f2-anchor" tabindex="-1" aria-hidden="true"></a>
+  <div class="f2-wrap">
+    <header class="f2-head">
+      <p class="f2-eyebrow">Against the field</p>
+      <h2 class="f2-h2" id="gallery-h">Same inputs, every method</h2>
+      <p class="f2-selected"><span class="f2-badge">Selected examples</span></p>
+      <p class="f2-lede" data-caption>Three objects per capture configuration were drawn with a fixed seed, then some were swapped within the same configuration to include cases where a method fails. This is a curated set, not an uncurated or exhaustive one. Failures of any method, ours included, are marked and kept.</p>
+    </header>
+
+    <div class="gl-filters" data-filters aria-label="Filter examples by tag"></div>
+    <label class="gl-expo"><input type="checkbox" data-expo checked> <span>Display exposure x1.5 on every column, same for all methods (display only, uncheck for raw renders)</span></label>
+    <p class="gl-count" data-gl-count role="status" aria-live="polite"></p>
+
+    <div class="gl-table is-lifted" data-table>
+      <div class="gl-head" data-head aria-hidden="true"></div>
+      <div class="gl-rows" data-rows></div>
+    </div>
+
+    <ul class="gl-notes" data-notes>
+      <li>Best baseline for an object is the baseline with the lowest Chamfer-L1 on that object.</li>
+      <li data-pixal>Pixal3D is not shown: its results on this set are still pending.</li>
+    </ul>
+    <noscript><p class="f2-noscript">The example gallery needs JavaScript.</p></noscript>
+  </div>
+
+  <dialog class="gl-dialog" data-dialog aria-label="Example enlarged">
+    <div class="gl-dialog-inner">
+      <button type="button" class="gl-x f2-btn" data-close aria-label="Close">Close</button>
+      <figure class="gl-fig">
+        <img alt="" data-lb-img>
+        <figcaption class="f2-prov" data-lb-cap></figcaption>
+      </figure>
+      <div class="gl-nav">
+        <button type="button" class="f2-btn" data-prev aria-label="Previous method">Prev</button>
+        <button type="button" class="f2-btn" data-next aria-label="Next method">Next</button>
+      </div>
+    </div>
+  </dialog>
+</section>
+<!-- 08_results.html -->
+<section class="sec results" id="results" data-section="results" aria-labelledby="results-title">
+  <div class="ray" aria-hidden="true"></div>
+  <div class="container">
+    <p class="eyebrow">Results</p>
+    <h2 id="results-title" class="sec-title">Numbers, with the caveats</h2>
+    <p class="sec-lead">Every cell below is read from one results file. Best is bold, second best is underlined, both computed from the numbers. An em dash means the value is not final yet. Baselines are registered to the ground truth before scoring; FORGE3D is not. FORGE3D also uses depth that the baselines do not receive, and its numbers are preliminary (see the notes under each table).</p>
+    <p class="swipe-hint" aria-hidden="true">Swipe the table sideways. The method column stays in view.</p>
+    <div class="results-app" data-results-app>
+      <noscript><p class="prov">The results tables are rendered by script from the results file. Enable JavaScript to view them.</p></noscript>
+    </div>
+  </div>
+</section>
+<!-- 09_bench.html -->
+<section class="f2-sec f2-bench" id="bench" data-section="bench" aria-labelledby="bench-h">
+  <div class="f2-wrap">
+    <header class="f2-head bc-head">
+      <p class="f2-eyebrow bc-eyebrow">The benchmark</p>
+      <h2 class="f2-h2 bc-title" id="bench-h" aria-label="FORGE3DBench"><span class="wm-bench" aria-hidden="true">FORGE<span class="wm-3d">3D</span><span class="wm-b">Bench</span></span></h2>
+      <p class="f2-lede" data-blurb></p>
+      <p class="bc-soon">
+        <span class="f2-soon" aria-disabled="true">Download <em>Coming soon</em></span>
+        <span class="f2-soon" aria-disabled="true">Leaderboard <em>Coming soon</em></span>
+      </p>
+    </header>
+
+    <div class="bc-stats" data-bc-stats aria-label="Benchmark facts"></div>
+
+    <div class="bc-block">
+      <h3 class="bc-h3">Six capture configurations</h3>
+      <p class="bc-sub">Two environments times three placements. Pick one to browse its scenes.</p>
+      <div class="bc-cfgs" role="group" aria-label="Capture configuration" data-cfgs></div>
+      <div class="bc-detail">
+        <figure class="f2-frame bc-frame">
+          <img class="bc-preview" alt="" data-cfg-img loading="lazy" decoding="async">
+          <figcaption class="f2-prov" data-cfg-cap></figcaption>
+        </figure>
+        <div class="bc-detail-side">
+          <p class="bc-blurb" data-cfg-blurb></p>
+          <div class="bc-scenes" role="group" aria-label="Scenes in this configuration" data-scenes></div>
+        </div>
+      </div>
+      <div class="bc-robot">
+        <p><strong>What Robot table means.</strong> In robot-table scenes a robot arm with a gripper reaches into the scene and can grasp or occlude objects on the table, so an object may be partly hidden from some viewpoints. Ground and table scenes place objects on the floor or a table with no robot.</p>
+        <p>Methods are scored against the true mesh in its metric frame. FORGE3D uses the calibrated views and the observed depth; the baselines shown on this page use RGB and object masks only.</p>
+      </div>
+    </div>
+
+    <div class="bc-block">
+      <h3 class="bc-h3">Twenty-four viewpoints per scene</h3>
+      <p class="bc-sub">Drag the image or use the slider to walk around one scene.</p>
+      <div class="bc-views" data-views>
+        <figure class="f2-frame bc-frame bc-view-frame">
+          <div class="bc-view-stage" data-view-stage><img alt="" data-view-img loading="lazy" decoding="async" draggable="false"></div>
+          <figcaption class="f2-prov" data-view-cap></figcaption>
+        </figure>
+        <div class="bc-view-ctl">
+          <svg class="bc-dial" viewBox="-60 -60 120 120" role="img" aria-label="Azimuth dial" data-dial></svg>
+          <div class="bc-view-row">
+            <button type="button" class="f2-btn" data-vprev aria-label="Previous viewpoint">Prev</button>
+            <input type="range" class="bc-range" min="0" max="23" step="1" value="0" data-range aria-label="Viewpoint">
+            <button type="button" class="f2-btn" data-vnext aria-label="Next viewpoint">Next</button>
+          </div>
+          <p class="bc-readout" data-readout role="status"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bc-block">
+      <h3 class="bc-h3">Object pool</h3>
+      <p class="bc-sub" data-pool-sub>Crops of the objects placed in the scenes.</p>
+      <div class="gl-filters bc-filters" data-pool-filters aria-label="Filter objects by configuration"></div>
+      <div class="bc-pool" data-pool></div>
+    </div>
+    <noscript><p class="f2-noscript">The benchmark explorer needs JavaScript.</p></noscript>
+  </div>
+</section>
+<!-- 10_notes.html -->
+<section class="f2-sec f2-notes" id="notes" data-section="notes" aria-labelledby="notes-h">
+  <div class="f2-wrap">
+    <header class="f2-head">
+      <p class="f2-eyebrow">Notes</p>
+      <h2 class="f2-h2" id="notes-h">Limits and honest notes</h2>
+    </header>
+
+    <div class="nt-grid">
+      <div class="nt-col">
+        <h3 class="nt-h3">Limits</h3>
+        <ol class="nt-list" data-limits></ol>
+      </div>
+      <div class="nt-col">
+        <h3 class="nt-h3">Disclosures</h3>
+        <ul class="nt-list nt-plain" data-disclosures></ul>
+        <div class="nt-faq" data-faq hidden>
+          <h3 class="nt-h3">Questions</h3>
+          <div data-faq-list></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nt-bib" id="bibtex">
+      <div class="nt-bib-head">
+        <h3 class="nt-h3">BibTeX</h3>
+        <button type="button" class="f2-btn f2-btn-primary" data-copy>Copy BibTeX</button>
+        <span class="nt-status" data-copy-status role="status" aria-live="polite"></span>
+      </div>
+      <pre class="nt-code"><code data-bibtex tabindex="0"></code></pre>
+    </div>
+    <noscript><p class="f2-noscript">Limits, disclosures and the BibTeX entry load with JavaScript.</p></noscript>
+  </div>
+</section>
+</main>
+<!-- 11_footer.html -->
+<footer class="site-footer" data-section="footer" id="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="wm">FORGE<span class="wm-3d">3D</span></span>
+      <span class="footer-anon">Anonymous authors</span>
+    </div>
+    <p class="footer-text">Anonymous project page for a paper under double-blind review. No cookies, no third-party requests.</p>
+    <p class="footer-text">Links from this page carry no referrer.</p>
+    <p class="footer-links"><a href="#bibtex" data-goto="bibtex">BibTeX</a><a href="#top">Back to top</a></p>
+  </div>
+</footer>
+</body>
+</html>

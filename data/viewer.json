@@ -1,0 +1,155 @@
+{
+ "objects": [
+  {
+   "id": "obj01",
+   "label": "red wafer snack (box, printed colour)",
+   "thumb": "assets/viewer/obj01_thumb.webp",
+   "variants": [
+    {
+     "name": "Ours",
+     "glb": "assets/viewer/obj01_ours.glb",
+     "size_mb": 0.97,
+     "poster": "assets/viewer/obj01_ours_poster.webp"
+    },
+    {
+     "name": "Ground truth",
+     "glb": "assets/viewer/obj01_gt.glb",
+     "size_mb": 0.99,
+     "poster": "assets/viewer/obj01_gt_poster.webp"
+    },
+    {
+     "name": "ReconViaGen",
+     "glb": "assets/viewer/obj01_baseline.glb",
+     "size_mb": 0.13,
+     "poster": "assets/viewer/obj01_baseline_poster.webp"
+    }
+   ]
+  },
+  {
+   "id": "obj02",
+   "label": "blue glass swan (glass)",
+   "thumb": "assets/viewer/obj02_thumb.webp",
+   "variants": [
+    {
+     "name": "Ours",
+     "glb": "assets/viewer/obj02_ours.glb",
+     "size_mb": 1.03,
+     "poster": "assets/viewer/obj02_ours_poster.webp"
+    },
+    {
+     "name": "Ground truth",
+     "glb": "assets/viewer/obj02_gt.glb",
+     "size_mb": 0.17,
+     "poster": "assets/viewer/obj02_gt_poster.webp"
+    },
+    {
+     "name": "ReconViaGen",
+     "glb": "assets/viewer/obj02_baseline.glb",
+     "size_mb": 0.12,
+     "poster": "assets/viewer/obj02_baseline_poster.webp"
+    }
+   ]
+  },
+  {
+   "id": "obj03",
+   "label": "industrial pliers (metal tool)",
+   "thumb": "assets/viewer/obj03_thumb.webp",
+   "variants": [
+    {
+     "name": "Ours",
+     "glb": "assets/viewer/obj03_ours.glb",
+     "size_mb": 0.63,
+     "poster": "assets/viewer/obj03_ours_poster.webp"
+    },
+    {
+     "name": "Ground truth",
+     "glb": "assets/viewer/obj03_gt.glb",
+     "size_mb": 0.55,
+     "poster": "assets/viewer/obj03_gt_poster.webp"
+    },
+    {
+     "name": "Cupid (our multi-view adaptation)",
+     "glb": "assets/viewer/obj03_baseline.glb",
+     "size_mb": 0.13,
+     "poster": "assets/viewer/obj03_baseline_poster.webp"
+    }
+   ]
+  },
+  {
+   "id": "obj04",
+   "label": "colonial soldier figurine (painted)",
+   "thumb": "assets/viewer/obj04_thumb.webp",
+   "variants": [
+    {
+     "name": "Ours",
+     "glb": "assets/viewer/obj04_ours.glb",
+     "size_mb": 0.96,
+     "poster": "assets/viewer/obj04_ours_poster.webp"
+    },
+    {
+     "name": "Ground truth",
+     "glb": "assets/viewer/obj04_gt.glb",
+     "size_mb": 0.7,
+     "poster": "assets/viewer/obj04_gt_poster.webp"
+    },
+    {
+     "name": "ReconViaGen",
+     "glb": "assets/viewer/obj04_baseline.glb",
+     "size_mb": 0.17,
+     "poster": "assets/viewer/obj04_baseline_poster.webp"
+    }
+   ]
+  },
+  {
+   "id": "obj05",
+   "label": "bronze bird sculpture (bronze)",
+   "thumb": "assets/viewer/obj05_thumb.webp",
+   "variants": [
+    {
+     "name": "Ours",
+     "glb": "assets/viewer/obj05_ours.glb",
+     "size_mb": 0.94,
+     "poster": "assets/viewer/obj05_ours_poster.webp"
+    },
+    {
+     "name": "Ground truth",
+     "glb": "assets/viewer/obj05_gt.glb",
+     "size_mb": 0.18,
+     "poster": "assets/viewer/obj05_gt_poster.webp"
+    },
+    {
+     "name": "ReconViaGen",
+     "glb": "assets/viewer/obj05_baseline.glb",
+     "size_mb": 0.19,
+     "poster": "assets/viewer/obj05_baseline_poster.webp"
+    }
+   ]
+  },
+  {
+   "id": "obj06",
+   "label": "cooking ladle (textured)",
+   "thumb": "assets/viewer/obj06_thumb.webp",
+   "variants": [
+    {
+     "name": "Ours",
+     "glb": "assets/viewer/obj06_ours.glb",
+     "size_mb": 0.32,
+     "poster": "assets/viewer/obj06_ours_poster.webp"
+    },
+    {
+     "name": "Ground truth",
+     "glb": "assets/viewer/obj06_gt.glb",
+     "size_mb": 0.02,
+     "poster": "assets/viewer/obj06_gt_poster.webp"
+    },
+    {
+     "name": "Hunyuan3D-2mv",
+     "glb": "assets/viewer/obj06_baseline.glb",
+     "size_mb": 0.46,
+     "poster": "assets/viewer/obj06_baseline_poster.webp"
+    }
+   ]
+  }
+ ],
+ "note": "All variants share one frame (benchmark frame rotated to glTF Y-up) and one bounding box, so switching variants keeps camera and mesh in place. Unlit albedo look (KHR_materials_unlit); GLBs use meshopt + quantisation, so the meshopt decoder is required. Ours is decimated to at most 200k faces; the baseline shown per object is the best baseline by CD-L1 on this object."
+}

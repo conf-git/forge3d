@@ -1,0 +1,57 @@
+/* tokens.css: design tokens shared by every stylesheet. Dark only. */
+:root {
+  color-scheme: dark;
+
+  /* surfaces and text */
+  --bg: #07090C;
+  --surface: #0E1218;
+  --raised: #161C24;
+  --hairline: #232B36;
+  --text: #EDF1F4;
+  --muted: #9AA5B1;
+
+  /* accents */
+  --ember: #FF6B4A;      /* FORGE3D, ours, primary CTA */
+  --teal: #4FB3BF;       /* FORGE3DBench, appearance */
+  --amber: #F5B84B;      /* rays, best-value marks, focus */
+  --bench-bg: #08161A;
+  --baseline-grey: #9AA3AD; /* every baseline; only ours gets colour */
+
+  /* derived helpers (F1) */
+  --hairline-strong: #364252;
+  --on-ember: #07090C;
+  --focus: var(--amber);
+  --ember-soft: rgba(255, 107, 74, .12);
+  --teal-soft: rgba(79, 179, 191, .12);
+
+  /* shape and type */
+  --radius: 14px;
+  --radius-s: 8px;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* spacing scale: 4px * 1,2,3,4,6,8,12,16 */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --s8: 64px;
+
+  /* layout */
+  --content-w: 1200px;
+  --prose-w: 68ch;
+  --gutter: clamp(16px, 4vw, 48px);
+  --section-y: clamp(64px, 9vw, 128px);
+  --nav-h: 56px;
+
+  /* fluid type */
+  --fs-small: clamp(.78rem, .76rem + .1vw, .85rem);
+  --fs-body: clamp(1rem, .97rem + .15vw, 1.0625rem);
+  --fs-lead: clamp(1.08rem, 1rem + .4vw, 1.3rem);
+  --fs-h3: clamp(1.15rem, 1.05rem + .5vw, 1.45rem);
+  --fs-h2: clamp(1.9rem, 1.2rem + 3vw, 3.4rem);
+}

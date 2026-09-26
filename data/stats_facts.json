@@ -1,0 +1,281 @@
+{
+ "benchmark": {
+  "assets": 321,
+  "scenes": 120,
+  "configs": 6,
+  "scenes_per_config": 20,
+  "views_per_scene": 24,
+  "objects": 808,
+  "objects_min_visibility": 0.4,
+  "eval_subset": 150,
+  "eval_subset_scored": 144,
+  "eval_subset_unique_assets": 150,
+  "eval_subset_scenes": 120,
+  "image_resolution_px": 1440,
+  "environments": [
+   "Factory",
+   "Park"
+  ],
+  "placements": [
+   "Ground",
+   "Table",
+   "Robot table"
+  ]
+ },
+ "tables_shown": [
+  "forge3dbench150_4v",
+  "toys4k300_4v",
+  "forge3dbench150_1v"
+ ],
+ "ours_vs_best_baseline": {
+  "forge3dbench150_4v": {
+   "IV LPIPS": {
+    "best_baseline": "ReconViaGen",
+    "best_baseline_v": 0.20984148675860423,
+    "ours_v": 0.12161492861923762,
+    "rel_change": -0.4204438288261843,
+    "rel_improvement": 0.4204438288261843,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "IV PSNR": {
+    "best_baseline": "Hunyuan3D-2mv",
+    "best_baseline_v": 15.276988511284193,
+    "ours_v": 19.371629523734253,
+    "rel_change": 0.268026712818799,
+    "rel_improvement": 0.268026712818799,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "IV SSIM": {
+    "best_baseline": "Hunyuan3D-2mv",
+    "best_baseline_v": 0.7791533313898577,
+    "ours_v": 0.8557168731672896,
+    "rel_change": 0.09826505091219662,
+    "rel_improvement": 0.09826505091219662,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "NV LPIPS": {
+    "best_baseline": "ReconViaGen",
+    "best_baseline_v": 0.10466432279214065,
+    "ours_v": 0.08226832340127051,
+    "rel_change": -0.21397930826292874,
+    "rel_improvement": 0.21397930826292874,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "NV PSNR": {
+    "best_baseline": "Hunyuan3D-2mv",
+    "best_baseline_v": 18.804169199256986,
+    "ours_v": 19.908539039945158,
+    "rel_change": 0.05873005230838962,
+    "rel_improvement": 0.05873005230838962,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "NV SSIM": {
+    "best_baseline": "Hunyuan3D-2mv",
+    "best_baseline_v": 0.9167320654141131,
+    "ours_v": 0.9239983659720532,
+    "rel_change": 0.007926307840729558,
+    "rel_improvement": 0.007926307840729558,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "CD-L1": {
+    "best_baseline": "Hunyuan3D-2mv",
+    "best_baseline_v": 0.022075098153436556,
+    "ours_v": 0.012047647697424205,
+    "rel_change": -0.454242621541926,
+    "rel_improvement": 0.454242621541926,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "F@0.01": {
+    "best_baseline": "ReconViaGen",
+    "best_baseline_v": 0.4151756970418824,
+    "ours_v": 0.736770981664045,
+    "rel_change": 0.7746004568993846,
+    "rel_improvement": 0.7746004568993846,
+    "ours_better": true,
+    "ours_rank": 1
+   }
+  },
+  "toys4k300_4v": {
+   "IV LPIPS": {
+    "best_baseline": "ReconViaGen",
+    "best_baseline_v": 0.15083203882599872,
+    "ours_v": 0.08753639471561958,
+    "rel_change": -0.41964323099416295,
+    "rel_improvement": 0.41964323099416295,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "IV PSNR": {
+    "best_baseline": "ReconViaGen",
+    "best_baseline_v": 18.14167591333389,
+    "ours_v": 22.394569291273754,
+    "rel_change": 0.23442670888051984,
+    "rel_improvement": 0.23442670888051984,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "IV SSIM": {
+    "best_baseline": "Hunyuan3D-2mv",
+    "best_baseline_v": 0.8677997528513273,
+    "ours_v": 0.9157145836949349,
+    "rel_change": 0.055214155899646164,
+    "rel_improvement": 0.055214155899646164,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "NV LPIPS": {
+    "best_baseline": "ReconViaGen",
+    "best_baseline_v": 0.0779760888261242,
+    "ours_v": 0.0511850795744168,
+    "rel_change": -0.34357980318104453,
+    "rel_improvement": 0.34357980318104453,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "NV PSNR": {
+    "best_baseline": "ReconViaGen",
+    "best_baseline_v": 21.123707363473045,
+    "ours_v": 25.06529264026218,
+    "rel_change": 0.18659533617687268,
+    "rel_improvement": 0.18659533617687268,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "NV SSIM": {
+    "best_baseline": "ReconViaGen",
+    "best_baseline_v": 0.9246113555298913,
+    "ours_v": 0.9425565674735439,
+    "rel_change": 0.019408383680696074,
+    "rel_improvement": 0.019408383680696074,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "CD-L1": {
+    "best_baseline": "ReconViaGen",
+    "best_baseline_v": 0.014685525968670845,
+    "ours_v": 0.008456757709694406,
+    "rel_change": -0.4241433553190054,
+    "rel_improvement": 0.4241433553190054,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "F@0.01": {
+    "best_baseline": "ReconViaGen",
+    "best_baseline_v": 0.5160597419366241,
+    "ours_v": 0.8502276252706845,
+    "rel_change": 0.6475372058281941,
+    "rel_improvement": 0.6475372058281941,
+    "ours_better": true,
+    "ours_rank": 1
+   }
+  },
+  "forge3dbench150_1v": {
+   "IV LPIPS": {
+    "best_baseline": "Hunyuan3D-2mv",
+    "best_baseline_v": 0.2335151818373965,
+    "ours_v": 0.1474807121946166,
+    "rel_change": -0.3684320178492217,
+    "rel_improvement": 0.3684320178492217,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "IV PSNR": {
+    "best_baseline": "Hunyuan3D-2mv",
+    "best_baseline_v": 15.606391429901123,
+    "ours_v": 17.694983104864757,
+    "rel_change": 0.13382925094150783,
+    "rel_improvement": 0.13382925094150783,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "IV SSIM": {
+    "best_baseline": "Hunyuan3D-2mv",
+    "best_baseline_v": 0.774289321154356,
+    "ours_v": 0.821314610954788,
+    "rel_change": 0.06073348619909145,
+    "rel_improvement": 0.06073348619909145,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "NV LPIPS": {
+    "best_baseline": "Hunyuan3D-2mv",
+    "best_baseline_v": 0.11602376124345162,
+    "ours_v": 0.10765152478712411,
+    "rel_change": -0.07215967114494866,
+    "rel_improvement": 0.07215967114494866,
+    "ours_better": true,
+    "ours_rank": 1
+   },
+   "NV PSNR": {
+    "best_baseline": "Hunyuan3D-2mv",
+    "best_baseline_v": 18.50287736152057,
+    "ours_v": 18.322403136364837,
+    "rel_change": -0.00975384647638949,
+    "rel_improvement": -0.00975384647638949,
+    "ours_better": false,
+    "ours_rank": 2
+   },
+   "NV SSIM": {
+    "best_baseline": "Hunyuan3D-2mv",
+    "best_baseline_v": 0.9154467049089293,
+    "ours_v": 0.9150700029330672,
+    "rel_change": -0.0004114952556409314,
+    "rel_improvement": -0.0004114952556409314,
+    "ours_better": false,
+    "ours_rank": 2
+   },
+   "CD-L1": {
+    "best_baseline": "Hunyuan3D-2mv",
+    "best_baseline_v": 0.028331357824046992,
+    "ours_v": 0.028577745888873726,
+    "rel_change": 0.008696655711206543,
+    "rel_improvement": -0.008696655711206543,
+    "ours_better": false,
+    "ours_rank": 2
+   },
+   "F@0.01": {
+    "best_baseline": "Hunyuan3D-2mv",
+    "best_baseline_v": 0.343248485121876,
+    "ours_v": 0.5179151570838358,
+    "rel_change": 0.5088636353338648,
+    "rel_improvement": 0.5088636353338648,
+    "ours_better": true,
+    "ours_rank": 1
+   }
+  }
+ },
+ "not_shown": [
+  {
+   "item": "Pixal3D rows (FORGE3DBench-150 and Toys4K-300)",
+   "reason": "Pending: the regeneration of this baseline is not final, so cells stay empty with a visible pending note."
+  },
+  {
+   "item": "OmniObject3D-300, 4 views",
+   "reason": "Not every method has been scored on this set under one shared protocol; the table is a placeholder with all cells pending."
+  },
+  {
+   "item": "6D pose estimation (HO3D, DexYCB)",
+   "reason": "Not final: the pose protocol still differs between rows (post-processing is applied to our meshes and not to all baselines) and the sets are very small (4 and 10 objects), so no pose numbers are shown."
+  },
+  {
+   "item": "Ablation ladder, view-scaling curve, mesh error on real sets",
+   "reason": "Not frozen for the current protocol."
+  },
+  {
+   "item": "Toys4K/OmniObject3D 1-view and earlier 117-object numbers",
+   "reason": "Superseded by the fixed 300-object lists."
+  }
+ ],
+ "notes": [
+  "Numbers on this page are means over objects; they come from one results file and each cell carries a frozen flag.",
+  "Hunyuan3D-2mv and Amodal3R are given the same views; Hunyuan3D-2mv uses its fixed view slots.",
+  "Objects with an untextured ground truth are excluded from FORGE3DBench-150 for every method (n = 144 of 150)."
+ ]
+}
