@@ -132,25 +132,6 @@ async function initNotes(sec, data) {
     });
     box.hidden = false;
   }
-  const code = sec.querySelector('[data-bibtex]');
-  code.textContent = c.bibtex || '';
-  const btn = sec.querySelector('[data-copy]'); const status = sec.querySelector('[data-copy-status]');
-  let timer;
-  const say = (m) => { status.textContent = m; clearTimeout(timer); timer = setTimeout(() => { status.textContent = ''; }, 2600); };
-  const selectText = () => { const rg = document.createRange(); rg.selectNodeContents(code); const s = getSelection(); s.removeAllRanges(); s.addRange(rg); };
-  btn.addEventListener('click', async () => {
-    const text = code.textContent;
-    try {
-      if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(text); say('Copied'); return; }
-      throw new Error('no clipboard api');
-    } catch (e) {
-      selectText();
-      let ok = false;
-      try { ok = document.execCommand('copy'); } catch (e2) { ok = false; }
-      say(ok ? 'Copied' : 'Selected, press Ctrl+C');
-    }
-  });
-  code.addEventListener('focus', selectText);
 }
 
 export default function init(root, data) {
