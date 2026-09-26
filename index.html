@@ -98,10 +98,7 @@
       <div class="tldr-main">
         <h2 id="tldr-title" class="sec-title">TL;DR</h2>
         <ul class="tldr-list">
-          <li>Image-conditioned 3D generators often return a plausible object whose visible surface drifts from the input views. The views act only as a hint.</li>
-<li>FORGE3D starts generation from the observation instead: depth seeds the sparse structure and image features seed the appearance latents, an idea we call latent forcing.</li>
-<li>Forcing alone improves geometry without extra training, and fine-tuning with correspondence-aware multi-view attention improves appearance. These are claims of the paper; the ablation is not shown on this page.</li>
-<li>FORGE3DBench provides cluttered, occluded, multi-view scenes with ground-truth meshes to test observation faithfulness.</li>
+          <li>FORGE3D generates 3D meshes that faithfully preserve observed geometry and appearance while plausibly completing unseen regions. It achieves this through latent forcing, initializing generation directly from multi-view observations encoded in the generator’s latent space.</li>
         </ul>
       </div>
     </div>
@@ -122,8 +119,8 @@
     </header>
 
     <div class="mt-tabs" role="tablist" aria-label="Method components" data-tablist>
-      <button type="button" role="tab" class="mt-tab" id="mt-tab-geometry" data-key="geometry" aria-controls="mt-panel" aria-selected="true" tabindex="0"><span class="mt-num" aria-hidden="true">1</span><span class="mt-label">Geometry latent forcing</span></button>
-      <button type="button" role="tab" class="mt-tab" id="mt-tab-appearance" data-key="appearance" aria-controls="mt-panel" aria-selected="false" tabindex="-1"><span class="mt-num" aria-hidden="true">2</span><span class="mt-label">Appearance latent forcing</span></button>
+      <button type="button" role="tab" class="mt-tab" id="mt-tab-aggregation" data-key="aggregation" aria-controls="mt-panel" aria-selected="true" tabindex="0"><span class="mt-num" aria-hidden="true">1</span><span class="mt-label">Multi-view observation aggregation</span></button>
+      <button type="button" role="tab" class="mt-tab" id="mt-tab-forcing" data-key="forcing" aria-controls="mt-panel" aria-selected="false" tabindex="-1"><span class="mt-num" aria-hidden="true">2</span><span class="mt-label">Latent forcing</span></button>
       <button type="button" role="tab" class="mt-tab" id="mt-tab-attention" data-key="attention" aria-controls="mt-panel" aria-selected="false" tabindex="-1"><span class="mt-num" aria-hidden="true">3</span><span class="mt-label">Correspondence-aware multi-view attention</span></button>
     </div>
 
@@ -136,8 +133,8 @@
         <figcaption class="f2-prov">Pipeline diagram, redrawn for this page. Highlighted layers belong to the selected step.</figcaption>
       </figure>
 
-      <div class="mt-panel" id="mt-panel" role="tabpanel" aria-labelledby="mt-tab-geometry" tabindex="0" data-panel>
-        <h3 class="mt-title" data-title>Geometry latent forcing</h3>
+      <div class="mt-panel" id="mt-panel" role="tabpanel" aria-labelledby="mt-tab-aggregation" tabindex="0" data-panel>
+        <h3 class="mt-title" data-title>Multi-view observation aggregation</h3>
         <div class="mt-text" data-body></div>
         <p class="mt-caption" data-caption></p>
       </div>

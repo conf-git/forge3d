@@ -2,10 +2,7 @@
  "tagline": "Start generation from evidence, not noise",
  "subhead": "FORGE3D writes the observed depth and image features into a pretrained 3D generator before sampling begins, so the mesh follows the input views. Hidden regions are still completed by the generator.",
  "tldr": [
-  "Image-conditioned 3D generators often return a plausible object whose visible surface drifts from the input views. The views act only as a hint.",
-  "FORGE3D starts generation from the observation instead: depth seeds the sparse structure and image features seed the appearance latents, an idea we call latent forcing.",
-  "Forcing alone improves geometry without extra training, and fine-tuning with correspondence-aware multi-view attention improves appearance. These are claims of the paper; the ablation is not shown on this page.",
-  "FORGE3DBench provides cluttered, occluded, multi-view scenes with ground-truth meshes to test observation faithfulness."
+  "FORGE3D generates 3D meshes that faithfully preserve observed geometry and appearance while plausibly completing unseen regions. It achieves this through latent forcing, initializing generation directly from multi-view observations encoded in the generator’s latent space."
  ],
  "chips": [
   {
@@ -23,15 +20,25 @@
  ],
  "abstract_placeholder": "Recent 3D mesh generators produce visually compelling assets, yet faithfully reconstructing specific objects from real-world observations remains challenging. A practical mesh generation framework must jointly preserve observed 3D geometry and pixel-aligned appearance from one or more views while plausibly completing unseen regions. However, these observations often serve only as coarse conditioning signals, allowing generated geometry and appearance to deviate from the input. Moreover, existing 3D mesh benchmarks provide limited coverage of realistic scenes and challenging observation conditions needed to assess reconstruction faithfulness in real-world scenarios. To address these gaps, we introduce FORGE3D (Faithful Observation-Grounded 3D Mesh Generation), an observation-faithful mesh generation pipeline, and FORGE3DBench, a benchmark for evaluating observation faithfulness under realistic multi-view conditions. FORGE3D directly encodes geometric and visual observations into the generative latent space through geometry and appearance latent forcing, initializing generation from observed evidence. Applied to a pretrained generator, latent forcing already improves geometric fidelity without additional training, and fine-tuning with correspondence-aware multi-view attention further improves appearance. FORGE3DBench features more than 300 unique assets across 120 simulated scenes (20 in each of six capture configurations) with 24 camera viewpoints, encompassing varied object placements, lighting conditions, and occlusions. On the benchmarks shown on this page, FORGE3D is ahead of the four shown baselines at four views and mixed at one view; FORGE3D also uses observed depth that the baselines do not receive.",
  "method": {
-  "geometry": {
-   "title": "Geometry latent forcing",
-   "body": "The generator's first stage decides which cells of a 64 by 64 by 64 grid are occupied. We back-project the observed depth from all views into an occupancy shell and encode it with the frozen stage-one encoder. This encoding replaces pure noise as the starting point of the flow, so the occupied cells follow the observed surface and the flow completes the rest.",
-   "caption": "Observed depth becomes an occupancy shell that seeds the sparse structure."
+  "aggregation": {
+   "title": "Multi-view observation aggregation",
+   "body": "All calibrated views are merged into one shared 3D description of what was observed. The observed depth from every view is back-projected into a single occupancy shell, and for each occupied cell the image features from every view that sees it are gathered and averaged. The generator therefore receives one consistent body of evidence instead of separate images.",
+   "caption": "Every view contributes to one shared set of 3D evidence."
   },
-  "appearance": {
-   "title": "Appearance latent forcing",
-   "body": "For each occupied cell that a camera sees, we sample DINOv2 features at its projection in every view that sees it, average them, and pass them through the official structured-latent encoder. These seeds fill the observed cells of the second-stage starting tensor. Unobserved cells keep Gaussian noise, which marks them as regions to generate.",
-   "caption": "Image features seed visible cells; unseen cells start from noise."
+  "forcing": {
+   "title": "Latent forcing",
+   "parts": [
+    {
+     "title": "Geometry latent forcing",
+     "body": "The generator's first stage decides which cells of a 64 by 64 by 64 grid are occupied. We back-project the observed depth from all views into an occupancy shell and encode it with the frozen stage-one encoder. This encoding replaces pure noise as the starting point of the flow, so the occupied cells follow the observed surface and the flow completes the rest.",
+     "caption": "Observed depth becomes an occupancy shell that seeds the sparse structure."
+    },
+    {
+     "title": "Appearance latent forcing",
+     "body": "For each occupied cell that a camera sees, we sample DINOv2 features at its projection in every view that sees it, average them, and pass them through the official structured-latent encoder. These seeds fill the observed cells of the second-stage starting tensor. Unobserved cells keep Gaussian noise, which marks them as regions to generate.",
+     "caption": "Image features seed visible cells; unseen cells start from noise."
+    }
+   ]
   },
   "attention": {
    "title": "Correspondence-aware multi-view attention",

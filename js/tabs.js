@@ -1,6 +1,7 @@
 /* tabs.js (role F2): method tabs (with inlined method.svg) and the notes section (limits, disclosures, BibTeX).
    export default init(root, data). Safe to call more than once. */
-const KEYS = ['geometry', 'appearance', 'attention'];
+const KEYS = ['geometry', 'appearance', 'attention', 'all'];
+const STEP_LAYERS = { aggregation: ['all'], forcing: ['geometry', 'appearance'], attention: ['attention'] };
 
 function findSection(root, name) {
   const sel = `[data-section="${name}"]`;
@@ -52,7 +53,8 @@ async function initMethod(sec, data) {
     host.dataset.active = key;
     host.querySelectorAll('[data-layer]').forEach((el) => {
       const tk = layerTokens(el);
-      const mine = tk.includes(key);
+      const want = STEP_LAYERS[key] || [key];
+      const mine = tk.some((x) => want.includes(x));
       const other = tk.some((x) => KEYS.includes(x));
       el.classList.toggle('is-active', mine);
       el.classList.toggle('is-dim', !mine && other);
@@ -68,8 +70,17 @@ async function initMethod(sec, data) {
     if (m.title) panel.querySelector('[data-title]').textContent = m.title;
     const body = panel.querySelector('[data-body]');
     body.textContent = '';
-    String(m.body || '').split(/\n{2,}/).filter(Boolean).forEach((p) => { const el = document.createElement('p'); el.textContent = p; body.appendChild(el); });
-    panel.querySelector('[data-caption]').textContent = m.caption || '';
+    const addText = (host, txt) => String(txt || '').split(/\n{2,}/).filter(Boolean).forEach((p) => { const el = document.createElement('p'); el.textContent = p; host.appendChild(el); });
+    if (Array.isArray(m.parts)) {   // several parts shown at once (e.g. geometry + appearance forcing)
+      m.parts.forEach((pt, i) => {
+        const box = document.createElement('div'); box.className = 'mt-part mt-part-' + (i === 0 ? 'geometry' : 'appearance');
+        const h = document.createElement('h4'); h.className = 'mt-subtitle'; h.textContent = pt.title || ''; box.appendChild(h);
+        addText(box, pt.body);
+        if (pt.caption) { const c = document.createElement('p'); c.className = 'mt-caption'; c.textContent = pt.caption; box.appendChild(c); }
+        body.appendChild(box);
+      });
+    } else addText(body, m.body);
+    panel.querySelector('[data-caption]').textContent = Array.isArray(m.parts) ? '' : (m.caption || '');
     panel.classList.remove('is-swap'); void panel.offsetWidth; panel.classList.add('is-swap');
     applyLayers(key);
     if (focus) tab.focus();
@@ -84,7 +95,7 @@ async function initMethod(sec, data) {
       if (j !== null) { e.preventDefault(); select(tabs[j].dataset.key, true); }
     });
   });
-  select('geometry');
+  select('aggregation');
 
   // inline the diagram so CSS can address its layers
   try {
@@ -102,7 +113,7 @@ async function initMethod(sec, data) {
       n.removeAttribute('data-f2-style');
     });
     host.dataset.state = 'ready';
-    applyLayers(panel.dataset.key || 'geometry');
+    applyLayers(panel.dataset.key || 'aggregation');
   } catch (e) {
     host.dataset.state = 'missing';
     const msg = host.querySelector('[data-svg-msg]');

@@ -146,3 +146,17 @@
 
 /* side cards removed: one centred column */
 @media (min-width:1040px){.proof-app.is-ready{grid-template-columns:minmax(0,min(78svh,860px));justify-content:center}}
+
+/* ---- TL;DR statement (single paragraph, full width) */
+.tldr-grid{grid-template-columns:1fr!important}
+.tldr-list{margin-top:var(--s5)}
+.tldr-list li,.tldr-list li:first-child{padding-left:0;max-width:none;width:100%;text-align:justify;hyphens:manual;color:var(--text);font-family:var(--font-display);font-weight:500;font-size:clamp(1.2rem,1.02rem + .9vw,1.7rem);line-height:1.45}
+.tldr-list li::before{display:none}
+/* ---- method: several parts shown at once */
+.mt-part{margin:0 0 var(--s5,20px)}
+.mt-subtitle{margin:0 0 var(--s2,8px);font:700 clamp(17px,1.8vw,20px)/1.2 var(--font-display);color:var(--text)}
+.mt-part-geometry .mt-subtitle{color:var(--ember)}.mt-part-appearance .mt-subtitle{color:var(--teal)}
+.mt-part-geometry .mt-caption{border-color:var(--ember)}.mt-part-appearance .mt-caption{border-color:var(--teal)}
+.mt-caption:empty{display:none}
+.mt-panel[data-key="forcing"] .mt-title{color:var(--ember)}
+.mt-panel[data-key="aggregation"] .mt-title{color:var(--amber)}
