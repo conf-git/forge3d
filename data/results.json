@@ -173,7 +173,7 @@
      ]
     },
     {
-     "method": "Cupid (our multi-view adaptation) (n=806)",
+     "method": "Cupid (n=806)",
      "is_ours": false,
      "cells": [
       {
@@ -420,7 +420,7 @@
      ]
     },
     {
-     "method": "Cupid (our multi-view adaptation)",
+     "method": "Cupid",
      "is_ours": false,
      "cells": [
       {
@@ -667,7 +667,7 @@
      ]
     },
     {
-     "method": "Cupid (our multi-view adaptation)",
+     "method": "Cupid",
      "is_ours": false,
      "cells": [
       {

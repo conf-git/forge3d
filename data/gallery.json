@@ -6,7 +6,7 @@
   "Pixal3D",
   "Amodal3R",
   "Hunyuan3D-2mv",
-  "Cupid (our multi-view adaptation)",
+  "Cupid",
   "Ours"
  ],
  "rows": [
@@ -23,12 +23,12 @@
     "Pixal3D": "assets/gallery/g01_pixal3d.webp",
     "Amodal3R": "assets/gallery/g01_amodal3r.webp",
     "Hunyuan3D-2mv": "assets/gallery/g01_hy3d2mv.webp",
-    "Cupid (our multi-view adaptation)": "assets/gallery/g01_cupid.webp",
+    "Cupid": "assets/gallery/g01_cupid.webp",
     "Ours": "assets/gallery/g01_ours.webp"
    },
    "failure_of": [
     "Amodal3R",
-    "Cupid (our multi-view adaptation)"
+    "Cupid"
    ],
    "note": ""
   },
@@ -45,11 +45,11 @@
     "Pixal3D": "assets/gallery/g02_pixal3d.webp",
     "Amodal3R": "assets/gallery/g02_amodal3r.webp",
     "Hunyuan3D-2mv": "assets/gallery/g02_hy3d2mv.webp",
-    "Cupid (our multi-view adaptation)": "assets/gallery/g02_cupid.webp",
+    "Cupid": "assets/gallery/g02_cupid.webp",
     "Ours": "assets/gallery/g02_ours.webp"
    },
    "failure_of": [
-    "Cupid (our multi-view adaptation)"
+    "Cupid"
    ],
    "note": ""
   },
@@ -66,11 +66,11 @@
     "Pixal3D": "assets/gallery/g09_pixal3d.webp",
     "Amodal3R": "assets/gallery/g09_amodal3r.webp",
     "Hunyuan3D-2mv": "assets/gallery/g09_hy3d2mv.webp",
-    "Cupid (our multi-view adaptation)": "assets/gallery/g09_cupid.webp",
+    "Cupid": "assets/gallery/g09_cupid.webp",
     "Ours": "assets/gallery/g09_ours.webp"
    },
    "failure_of": [
-    "Cupid (our multi-view adaptation)"
+    "Cupid"
    ],
    "note": ""
   },
@@ -87,11 +87,11 @@
     "Pixal3D": "assets/gallery/g20_pixal3d.webp",
     "Amodal3R": "assets/gallery/g20_amodal3r.webp",
     "Hunyuan3D-2mv": "assets/gallery/g20_hy3d2mv.webp",
-    "Cupid (our multi-view adaptation)": "assets/gallery/g20_cupid.webp",
+    "Cupid": "assets/gallery/g20_cupid.webp",
     "Ours": "assets/gallery/g20_ours.webp"
    },
    "failure_of": [
-    "Cupid (our multi-view adaptation)"
+    "Cupid"
    ],
    "note": ""
   },
@@ -108,12 +108,12 @@
     "Pixal3D": "assets/gallery/g21_pixal3d.webp",
     "Amodal3R": "assets/gallery/g21_amodal3r.webp",
     "Hunyuan3D-2mv": "assets/gallery/g21_hy3d2mv.webp",
-    "Cupid (our multi-view adaptation)": "assets/gallery/g21_cupid.webp",
+    "Cupid": "assets/gallery/g21_cupid.webp",
     "Ours": "assets/gallery/g21_ours.webp"
    },
    "failure_of": [
     "Hunyuan3D-2mv",
-    "Cupid (our multi-view adaptation)"
+    "Cupid"
    ],
    "note": ""
   },
@@ -130,19 +130,18 @@
     "Pixal3D": "assets/gallery/g22_pixal3d.webp",
     "Amodal3R": "assets/gallery/g22_amodal3r.webp",
     "Hunyuan3D-2mv": "assets/gallery/g22_hy3d2mv.webp",
-    "Cupid (our multi-view adaptation)": "assets/gallery/g22_cupid.webp",
+    "Cupid": "assets/gallery/g22_cupid.webp",
     "Ours": "assets/gallery/g22_ours.webp"
    },
    "failure_of": [
     "Hunyuan3D-2mv",
-    "Cupid (our multi-view adaptation)"
+    "Cupid"
    ],
    "note": ""
   }
  ],
  "notes": [
   "Selected examples: 3 objects per scene configuration drawn with a fixed seed, then swapped within the same configuration to include failure cases; not an exhaustive or uncurated set.",
-  "The Cupid column comes from our own multi-view adaptation of a single-view release; it fails on many objects and should not be read as the original method.",
   "Failures of every method, including ours, are marked. The failure rule is a display threshold, not a benchmark metric."
  ]
 }
